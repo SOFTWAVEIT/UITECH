@@ -1,0 +1,50 @@
+HTML Images
+-----------
+<img> tag is used to place image in a web page. 
+
+The <img> tag is empty, which means that - it contains attributes only and it has no closing tag.
+
+Attributes
+----------
+1) src = URL - to specify the address of an image. 
+Image source URLs can be either local or global
+
+ Global: http://softwaveit.co/img/logo.png
+
+ Local:   images/sunset.gif   [relative path](or)
+   file://c:/HTML/images/sunset.gif [absolute path]
+
+
+2) align =bottom | middle | center | top | left | right  
+
+"left" and "right" alignments are only applied to image
+"top" , "bottom", "middle", "center" alignments are applied to the text along with the image
+
+3) width = width of image
+
+4) height = height of image
+
+5) name = reference of image
+
+6) alt = defines alternate text, which may be presented in place of the image 
+-used  to tell the details about the image to search engines. 
+
+7) title = message to be displayed on mouse over on image
+
+8) border = border size for image
+
+9) hspace = horizontal space between the image and other content
+
+10) vspace = vertical space between the image and other content
+
+11) usemap = name of the image map to be applied on the image
+
+
+
+
+
+To provide favicon for page :
+-----------------------------
+<head>
+ <link rel="icon" href="images/logo.gif" type="image/gif"> 
+</head>
