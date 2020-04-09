@@ -1,0 +1,30 @@
+CSS Colors:
+-----------
+> Text Color Name : red, blue, lightgreen
+
+> Hexa decimal Value : #FF0000
+     white - #FFFFFF
+	 black - #000000
+     white - #FFF
+	 black - #000	 
+
+> rgb() function
+    red > 0-255		green > 0-255	blue > 0-255
+	rgb(red,green,blue);
+	white - rgb(255,255,255)
+	black - rgb(0,0,0)
+	red - rgb(255,0,0)
+	
+> hsl() function
+  H - Hue		0 - 360
+  S - Saturation (darkness)  - 0% - 100%
+  L - Lightness  - 0% - 100%
+
+  hsl(25,56%,34%)
+  
+> rgba() function - 
+	r - red | g-green | b-blue | a- Alpha (0-1)
+	red > 0-255		green > 0-255	blue > 0-255
+	
+> hsla() function  
+  
