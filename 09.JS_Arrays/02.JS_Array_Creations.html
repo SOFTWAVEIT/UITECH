@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Creations</title>
+</head>
+<body>
+    <div>
+        <h2>Java Script | Array Creations</h2>
+    </div>
+
+    <script>
+        //creating an array as a literal
+        let courses = ['HTML','CSS','Java Script','jQuery']
+        console.log(courses)
+        console.log(`Size of Array = ${courses.length}`)
+
+        //creating an array using new operator
+        let names = new Array()
+        names[0] = 'Sunil'
+        names[1] = 'Anil'
+        names[2] = 'Naveen'
+        names[3] = 'Sanjay'
+        console.log(names)
+        console.log(`Size of Array = ${names.length}`)
+
+        names[9] = 'Praveen'
+        console.log(names)
+        console.log(`Size of Array = ${names.length}`)
+        console.log(names[5])
+
+        //creating an array using a constructor
+        let marks = new Array(98,78,96,74,63);
+        console.log(marks)
+        console.log(`Size of Array = ${marks.length}`)
+
+        console.log(`----- mixed content array -----`)
+        let mixed_data = [89,'Sunil',true,{empNo:101,name:'Naveen'},[10,20,30]]
+        console.log(`Size of Array = ${mixed_data.length}`)
+        console.log(mixed_data)
+
+        for(let data of mixed_data){
+            console.log(`${data} - ${typeof(data)}`)
+        }
+    </script>
+</body>
+</html>

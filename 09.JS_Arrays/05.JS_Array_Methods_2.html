@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>JS | Array Methods</title>
+</head>
+<body>
+    <div>
+        <h2>Java Script | Array Methods | for adding and removing elements</h2>
+    </div>
+
+    <script>
+        let courses = ['HTML','CSS','Java Script']
+        console.log(courses)
+        //--- using push() function ----
+        //courses.push('jQuery')
+        courses.push('jQuery','Bootstrap')
+        console.log(courses)
+
+        console.log('Applying pop() - '+courses.pop())
+        console.log(courses)
+
+        //--- using unshift() function to add elements to the begining of array---
+        //courses.unshift('Core Java')
+        courses.unshift('Core Java','Adv Java')
+        console.log(courses)
+
+        console.log(`Applying shift() - ${courses.shift()}`)
+        console.log(`Applying shift() - ${courses.shift()}`)
+        console.log(courses)
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Methods</title>
+</head>
+<body>
+    <div>
+        <h2>Java Script | Array Methods</h2>
+    </div>
+
+    <script>
+        let courses = ['HTML','CSS', 'Java Script', 'jQuery', 'Bootstrap']
+        console.log(courses)
+        console.log(`--- reverse() function of array --- `)
+        courses.reverse()        
+        console.log(courses)
+        
+        courses.reverse()
+        console.log(courses)
+
+        console.log(`--- indexOf() function of array ---`)
+        console.log(`Index of HTML = ${courses.indexOf('HTML')}`)
+
+        console.log(`--- lastIndexOf() function of array ---`)
+        console.log(`Last Index of HTML = ${courses.lastIndexOf('HTML')}`)        
+
+        let new_courses = ['Data Science','Core Java', 'Adv Java', 'ReactJS']
+        console.log(`--- concat() function ---`)
+        //let courses_list = courses.concat(new_courses)
+        let courses_list = courses.concat(new_courses,'Hibernate','Spring','ReactJS')
+        console.log(courses)
+        console.log(courses_list)
+    </script>
+</body>
+</html>

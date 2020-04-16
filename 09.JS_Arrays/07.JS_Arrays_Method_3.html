@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Methods</title>
+</head>
+<body>
+    <div>
+        <h2>Java Script Array Method</h2>
+    </div>
+    <script>
+        let courses = ['Core Java','Adv Java', 'Hibernate','Spring','Web Services']
+
+        console.log(`No of Courses = ${courses.length}`)
+        console.log(courses)
+
+        /* to remove an element from array */
+        delete courses[2]
+        console.log(`No of Courses = ${courses.length}`)
+        console.log(courses)   
+
+        console.log(`-----delete an element - approach:2-----`)
+        courses = ['Core Java','Adv Java', 'Hibernate','Spring','Web Services']
+        console.log(`No of Courses = ${courses.length}`)
+        console.log(courses)           
+
+        //courses.splice(2); //2-start index
+        //courses.splice(2,2); //2-start index, 1-no of elements
+        //courses.splice(2,2,'Angular','React','Vue'); 
+        let removed_elements = courses.splice(2,2,'Angular')
+        alert(removed_elements)
+        console.log(`No of Courses = ${courses.length}`) //4
+        console.log(courses)            
+    </script>
+</body>
+</html>
