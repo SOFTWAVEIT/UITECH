@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            background:linear-gradient(45deg,darkslategray,blueviolet);
+            padding:10px;
+            text-align:center;
+            font-family:'comic sans ms',sans-serif;
+            font-size:22px;
+            border-radius:20px;
+            width:50%;
+            margin:auto;
+            color:yellow;
+        }
+        input{
+            font-size:22px;
+        }
+        input:focus{
+            background-color:yellow
+        }
+    </style>
+    <title>Sum of Digits</title>
+</head>
+<body>
+    <div>
+        Sum of Digits of 
+        <input type="number" size=5 id="txtNum" autofocus onblur="sumOfDigts(this.value)"> 
+        <span id='sum_digits'></span>     
+    </div>
+    <script>
+        function sumOfDigts(num)
+        {
+            document.querySelector('#sum_digits').innerHTML ='' //to clear the result section
+            if(num.length > 0)
+            {
+                let sum = 0
+                num = parseInt(num) //to convert string to number type
+                while(num>0){
+                    let rem = num%10
+                    sum += rem
+                                    
+                    
+                    num = num/10
+                    num = Math.floor(num)                    
+                }
+                document.querySelector('#sum_digits').innerHTML = " = "+sum
+            }
+            else{
+                alert('Please enter a number')
+                document.getElementById('txtNum').focus()
+            }
+        }
+    </script>
+</body>
+</html>

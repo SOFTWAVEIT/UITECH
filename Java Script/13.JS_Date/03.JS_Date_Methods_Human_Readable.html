@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Date Methods</title>
+</head>
+<body>
+    <div>
+        <h2>Java Script | Date Methods for Human Readable Outputs</h2>
+    </div>
+    <script>
+        let date = new Date()
+        console.log(date)
+        console.log(date.toDateString())
+        console.log(date.toTimeString())
+
+        console.log(date.toLocaleDateString())
+        console.log(date.toLocaleTimeString())
+        console.log(date.toLocaleString())
+
+        /* to convert the date object based on a Locale*/
+        console.log('USA Chicago Time = '+date.toLocaleTimeString('en-US',{timeZone:'America/Chicago'}))
+
+        let options = {timeZone:'Europe/London', hour12:true}
+        console.log('England Time = '+date.toLocaleTimeString('en-GB',options))
+
+        console.log('Germany Time = '+date.toLocaleTimeString('en-US',{timeZone:'Europe/Berlin'}))
+
+        console.log('Arabic Time = '+date.toLocaleTimeString('ar-EG'))   
+
+        console.log(date.getTime())   
+        console.log(Date.now())
+    </script>
+</body>
+</html>

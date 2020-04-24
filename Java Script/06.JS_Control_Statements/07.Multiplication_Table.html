@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body,
+        input {
+            font-family: 'comic sans ms', sans-serif;
+            font-size: 22px;
+        }
+
+        input:focus {
+            background-color: yellow
+        }
+    </style>
+    <title>Multiplication Table</title>
+</head>
+
+<body>
+    <div>
+        Which Number's Multiplication Table
+        <input type="text" size=5 autofocus id="txtNum">
+        <input type="button" value="S h o w" onclick="mTable()">
+    </div>
+    <div id="mul_table" style="margin:50px;"></div>
+
+    <script>
+        function mTable() {
+            // get the referemce of Text Field
+            let entry_field = document.getElementById('txtNum');
+
+            if (entry_field != null) {
+                // get the value of Text Field
+                let num = entry_field.value
+                //alert(isNaN(num))
+                let res = ''
+                if (isNaN(num)) {
+                    res = 'Please enter a valid number in the field'
+                    document.getElementById('mul_table').style.color='red'
+                   // document.getElementById('mul_table').style.backgroundColor='black'
+                }
+                else {
+                    document.getElementById('mul_table').style.color='green'
+                    for (let i = 1; i <= 10; i++) {
+                        let p = num * i;
+                        res = `${res}${num} x ${i} = ${p} <br>`
+                    }                   
+                }//else
+                document.getElementById('mul_table').innerHTML = res
+            }
+        }
+    </script>
+</body>
+
+</html>

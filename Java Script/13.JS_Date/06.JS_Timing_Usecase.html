@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #counter{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            box-shadow:0 0 10px black;
+            background:linear-gradient(45deg,black,darkred);
+            position:absolute;
+            right:20px;
+            top:70px;
+            font-size:20px;
+            text-align:center;
+            color:white;
+            font-size:35px;
+            font-weight:bolder;
+            line-height:100px;
+        }
+    </style>
+    <title>Counter</title>
+</head>
+<body>
+    <div>
+        <h2>Java Script | Counter | Usecase</h2>
+    </div>
+    <div id="counter">
+        START
+    </div>
+    <script>
+        let counter = document.querySelector('#counter')
+        let count = 1
+
+        let timer = ()=>{            
+            counter.innerHTML = count
+            if(count == 11){
+                counter.innerHTML = 'OVER'
+                clearInterval(handle)
+            }
+            count++
+        }
+
+        let handle = setInterval(timer, 1000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Date Methods</title>
+</head>
+
+<body>
+    <div>
+        <h2>Java Script | Date Methods</h2>
+    </div>
+    <script>
+        let findDayName = (day) => {
+            let name = ''
+            switch (day) {
+                case 0:
+                    name = 'SUNDAY'
+                    break
+                case 1:
+                    name = 'MONDAY'
+                    break
+                case 2:
+                    name = 'TUESDAY'
+                    break
+                case 3:
+                    name = 'WEDNESDAY'
+                    break
+                case 4:
+                    name = 'THURSDAY'
+                    break
+                case 5:
+                    name = 'FRIDAY'
+                    break
+                case 6:
+                    name = 'SATURDAY'
+                    break
+                default:
+                    name = 'Invalid Day'
+            }
+            return name
+        }
+    </script>
+    <script>
+        let today = new Date()
+        console.log(today)
+        console.log('Year : ' + today.getYear()) //2020-1900 =120
+        console.log(`Year : ${today.getFullYear()}`) //2020
+        console.log(`Month : ${today.getMonth()}`) //3
+        console.log(`Date : ${today.getDate()}`) //21
+        console.log(`Day : ${today.getDay()}`) //[0-6]
+
+        /* to display day name */
+        let dayName = findDayName(today.getDay())
+        console.log(`Day Name = ${dayName}`)
+
+        console.log(`Hours : ${today.getHours()}`)
+        console.log(`Minutes : ${today.getMinutes()}`)
+        console.log(`Seconds : ${today.getSeconds()}`)
+        console.log(`Milli Seconds : ${today.getMilliseconds()}`)
+
+        /*-- setter methods of Date object */
+        today.setYear(2021)
+        today.setMonth(4)
+        today.setDate(23)
+        console.log(today)
+        console.log(today)
+
+        let time = today.getTime()
+        console.log('No of milliseconds from 1970 Jan Ist = ' + time)
+
+        let dateCheck = new Date(time)
+        console.log(dateCheck)
+
+        dateCheck.setTime(1000)
+        console.log(dateCheck)
+    </script>
+</body>
+
+</html>

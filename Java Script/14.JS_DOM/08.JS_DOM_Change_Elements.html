@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #main_pic{
+            width:350px;
+            border-radius:20px;
+            box-shadow:0 0 10px black;
+            display:block;
+            margin:auto;
+        }
+        section article button{
+            border:none;
+            padding:10px 20px;
+            background:none;
+            font-size:20px;
+            border:2px solid black;
+            border-radius:20px;
+            display:block;
+            margin:auto;
+        }
+        section article button:hover{
+            background:linear-gradient(45deg, black, orangered);
+            color:white;
+            border:none;
+            box-shadow:0 0 10px orangered
+        }
+    </style>
+    <title>Change Content</title>
+</head>
+<body>
+    <nav>
+        <h2>
+            Java Script | DOM | Change Content
+        </h2>
+    </nav>
+
+    <section>
+        <article>
+            <img src="../../HTML/images/computer8.jpeg" id="main_pic" alt="">
+        </article>
+        <article>
+            <button onclick="changeImage()">Change Image</button>
+        </article>
+    </section>
+
+    <script>
+        let changeImage = ()=>{
+            let imageTag = document.querySelector('#main_pic')
+            if(imageTag != null){
+                /*
+                console.log(imageTag.src)
+                imageTag.src = "../../HTML/images/computer7.jpg" 
+                */
+                console.log(imageTag.getAttribute("src"))
+                imageTag.setAttribute('src','../../HTML/images/computer7.jpg')
+                imageTag.setAttribute('alt','This is an Image')
+                //imageTag.style.width='600px'               
+            }
+        }
+    </script>
+</body>
+</html>

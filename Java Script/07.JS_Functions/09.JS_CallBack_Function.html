@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Call Back Functions</title>
+</head>
+<body>
+    <div>
+        <h2>JS Call Back Functions</h2>
+    </div>
+
+    <script>
+        let sum = (x=0,y=0)=>{
+            return (x+y)
+        }
+
+        let mul = (x=0,y=0)=>{
+            return (x*y)
+        }
+        
+
+        console.log('Sum = '+sum(10,20))
+        console.log('Product = '+ mul(10,20))
+        console.log(`-------------- Call back Function -----------------`)
+
+        let calc = (a=0,b=0,fun)=>{
+            return fun(a,b)
+        }
+
+        console.log('Sum = '+calc(3,4,sum)) 
+        console.log(`Product = ${calc(4,2,mul)}`)
+        console.log(calc(4,5,(a,b)=>{return(a-b)}))
+    </script>
+</body>
+</html>

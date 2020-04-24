@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .sit{
+            color:blue
+        }
+    </style>
+    <title>Getting Element References</title>
+</head>
+<body>
+    <nav>
+        <h2>Java Script | DOM | Find HTML Elements | querySelector(class_name)</h2>
+    </nav>  
+    <section>
+        <article>
+            <h2 class="sit">Article-1</h2>
+            <p>HTML Paragraph</p>
+            <p class="sit">CSS Paragraph</p>
+            <p id="js">Java Script Paragraph</p>
+            <h3 class="sit">End of Course List</h3>
+        </article>
+        <article>
+            <p class="sit">UI Technologies</p>
+        </article>
+        <article>
+            <button style="padding:8px 10px;border-radius:15px" onclick="changeStyles()">Change Paragraph Styles</button>
+        </article>
+    </section>
+
+    <script>
+        let changeStyles = ()=>{
+            //let para = document.querySelector('.sit')
+            let para = document.querySelector('p.sit')
+            if(para != null){
+                para.style.backgroundColor = 'blueviolet'
+                para.style.color = 'white'
+                para.style.width = '220px'                
+            }
+
+            para = document.querySelector('#js')
+            if(para != null){
+                para.innerHTML = 'Java Script Tutorials'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Getting Element References</title>
+</head>
+<body>
+    <nav>
+        <h2>Java Script | DOM | Find HTML Elements</h2>
+    </nav>
+    <section>
+        <article>
+            Name: 
+            <input type="text" id="txtName" autofocus>
+            <button onclick="showMsg()">W e l c o m e</button>
+        </article>
+    </section>
+    <script>
+        let showMsg = ()=>{
+            //get text box reference
+            let txt_name = document.getElementById('txtName')
+           if(txt_name != null){
+               //get value of text box
+               let name = txt_name.value
+            /*   
+               let res = 'Welcome, '
+            
+               if(name.trim().length > 0){
+                    res=res+name
+               }
+               else{
+                    res = res+'Guest'
+               }
+            */
+               name = name.trim() //to remove the leading & ending spaces
+               let name_size = name.length
+               res = (name_size>0)?name:'Guest'
+
+               alert('Welcome, '+res)
+               //to clear the text box value
+               txt_name.value =''
+           }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #div1
+        {
+         width: 200px;
+         height: 150px;
+         font-size:22px;
+         font-family:verdana;    
+         padding:20px;
+         background-color: lightgreen;
+         cursor: pointer;
+         margin:auto;    
+        }
+        </style>
+</head>
+<body>
+    <div id="div1" onmouseover="fun1()" onmouseout="fun2()" onmousemove="fun3()">Mouse Events- Place the mouse on me</div>
+
+    <script type="text/javascript">
+    var div=document.getElementById("div1");
+    
+    function fun1(){
+     div.style.border="10px solid red";
+    }
+    
+    function fun2(){
+     div.style.border="none";
+     div.innerHTML = 'Mouse Events- Place mouse on me';
+    }
+    
+    function fun3()
+    {
+     console.log(event)
+     var x=event.pageX; //to get the X coordinate where the mouse event occured
+     var y=event.pageY;
+     div.style.fontWeight='bolder'    
+     div.innerHTML = '('+x + ", " + y+')';
+    }
+    </script>
+</body>
+</html>
