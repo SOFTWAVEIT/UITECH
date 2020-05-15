@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            margin-bottom:300px;
+        }
+        select{
+            font-size:18px;
+        }
+        #states{
+            width:200px;
+            margin:auto;
+        }
+        #print{
+            border:1px solid black;
+            background:transparent;
+            padding:7px 25px;
+            border-radius:20px;
+            color:white;
+        }
+        #print:hover{
+            box-shadow:0 0 10px white
+        }
+    </style>
+    <title>Change Event</title>
+</head>
+<body>
+    <nav>
+        <h2>Java Script | Change Event | </h2>
+    </nav>
+    <section>
+        <article>
+          <label for="">Select Country Name</label>
+          <select name="country_names" id="country_names" onchange="getStates(this.value)">
+              <option value="">select country name</option>
+              <option>India</option>
+              <option>America</option>
+              <option>England</option>
+              <option>Australia</option>
+              <option>Singapore</option>
+          </select>
+
+          <p id="states"></p>
+        </article>   
+        <hr>
+        <article style="background-color: antiquewhite;padding:20px;">
+            <label for="">Apply Background Colour</label>
+            <select name="color_names" id="color_names">
+                <option value="">select color name</option>
+                <option>red</option>
+                <option>blue</option>
+                <option>green</option>
+                <option>lime</option>
+                <option>violet</option>                
+            </select> 
+            <div id="div_1" style="width:300px;height:250px;box-shadow:0 0 10px black;margin-top:20px;border-radius:20px;background-color:black"></div>       
+        </article>   
+        
+        <hr>
+        <article style="background-color: darkslategray;padding:20px;color:white">
+            <input type="checkbox" id="install_agr">
+            <label>I agree the Licence Agreement!</label>
+            <button id="install" disabled="disabled" onclick="alert('Agreed to Install Software')">Install</button>
+        </article>   
+        
+        <hr>
+        <article style="background-color: firebrick;padding:20px;color:white">            
+            <button id="print">Print Page</button>
+        </article>         
+    </section>
+
+    <script>
+        function getStates(cname){
+            let res='',color_val=''
+            if(cname.length<=0){
+              res='Please select country'
+              color_val='red'  
+            }
+            else{
+                res = 'States @ '+cname
+                color_val='blue'
+            }
+            let states = document.getElementById('states')
+            states.innerText = res
+            states.style.color = color_val
+        }
+
+        let color_names = document.querySelector('#color_names')
+        let div = document.querySelector('#div_1')
+
+        color_names.addEventListener('change',function(){
+            let color_select = color_names.value
+            if(color_select.length>0)
+             div.style.backgroundColor = color_select
+            else 
+             div.style.backgroundColor = 'black'
+        })
+
+        /* checkbox event handling */
+        let install_agr = document.querySelector('#install_agr')
+        let install_but = document.querySelector('#install')
+        let install = () => {
+           // alert(install_agr.checked)
+           if(install_agr.checked)
+             install_but.disabled =''
+           else
+             install_but.disabled='disabled'  
+        }
+        install_agr.addEventListener('change', install)
+
+        /*print dialog box*/
+        let print = document.querySelector('#print')
+        print.addEventListener('click', function(){
+            window.print();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        input{
+            font-size:20px;
+            border:none;
+            background-color:yellowgreen;
+            padding:5px;
+        }
+        #numChars{
+            font-size:20px
+        }
+    </style>
+    <title>Key Event</title>
+</head>
+<body>
+    <nav>
+        <h2>Java Script | Key Event | Keyup</h2>
+    </nav>
+    <section>
+        <article>
+            <input type="text" size=22 placeholder="enter name" autofocus="autofocus" maxlength="20" onkeyup='changeStyle(this.value)'>
+            <span id='numChars'></span>            
+        </article>        
+    </section>
+    
+    <script>
+        let txtName = document.querySelector('input')
+        let numChars = document.querySelector('#numChars')
+
+        let changeStyle = (data)=>{
+            data = data.toUpperCase()
+            txtName.value = data
+            numChars.innerText = '('+data.length+'/20)'
+        }
+    </script>
+</body>
+</html>

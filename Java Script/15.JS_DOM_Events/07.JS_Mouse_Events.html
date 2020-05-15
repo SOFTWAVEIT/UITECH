@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .article {
+            width: 550px;
+            height: 350px;
+            background-color: teal;
+            font-size: 25px;
+            text-align: center;
+            color: white;
+            line-height: 250px;
+            border-radius: 20px;
+            margin:auto;
+        }
+    </style>
+    <title>Mouse Event</title>
+</head>
+
+<body>
+    <nav>
+        <h2>Java Script | Mouse Event | mousemove</h2>
+    </nav>
+    <section>
+        <article class="article">
+            Move Mouse on this region
+        </article>
+    </section>
+
+    <script>
+        let article_region = document.querySelector(".article")
+
+        let mMove = ()=>{
+            //console.log(event)
+            let msg = `(${event.pageX}px, ${event.pageY}px)`
+            article_region.innerHTML = msg
+        }
+        
+        article_region.addEventListener('mousemove', mMove)
+    </script>
+</body>
+
+</html>

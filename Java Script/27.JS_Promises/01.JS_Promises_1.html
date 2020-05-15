@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Promises in JS</title>
+</head>
+<body>
+    <nav>
+        <h2>Java Script | Promises</h2>
+    </nav>
+    <script>
+        /*
+        let downloadImage = function(){
+            //JS codes to get image from server
+            
+            let isDownloaded = false
+            if(isDownloaded)
+              success('Yes, Downloding is Success')
+            else
+             // failure('No, Downloading is Failed')  
+             failure(new Error('Downloading is Failed'))
+        }
+
+        let success = function(msg){
+            console.log(msg)
+        }
+        let failure = function(err){
+            console.log(err.toString())
+        }
+
+        downloadImage()
+        */
+        /*
+        let downloadImage = (resolve, reject)=>{
+            //JS codes to get image from server
+            
+            let isDownloaded = true
+            if(isDownloaded)
+              resolve('Yes, Downloding is Success')
+            else
+             // failure('No, Downloading is Failed')  
+             reject(new Error('Downloading is Failed'))
+        }
+
+        let success = (msg) => console.log(msg)
+        let failure = (err) => console.log(err.toString())        
+
+        downloadImage(success, failure)
+        */
+
+        let downloadImage = new Promise(function(resolve, reject){
+            //JS to download Image
+            let isDownloaded = true
+            if(isDownloaded)
+             //resolve('Downloaded Image')
+             resolve({file:'logo.jpg',message:'success'})
+            else
+             reject (new Error('Internal Server Error'))
+        })
+        /*
+        let success = (msg) => console.log(msg)
+        let failure = (err) => console.log(err.toString())        
+
+        downloadImage.then(success).catch(failure)
+        */
+
+        downloadImage
+           .then((msg) => console.log(msg.file+" - "+msg.message))
+           .catch((err) => {
+               console.log(err.toString()) 
+           })
+    </script>
+</body>
+</html>
