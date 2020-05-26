@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Function Expression</title>
+</head>
+<body>
+    <div>
+        <h2>JS Function Expression</h2>
+    </div>
+    <script>
+        /*
+        let add = function addNum(x=0,y=0) {
+            let sum = x+y;
+            console.log(`Sum = ${sum}`)
+        }
+        */
+        //anonymous function
+        let add = function(x=0,y=0) {
+            let sum = x+y;
+            console.log(`Sum = ${sum}`)
+        }       
+        console.log(add)
+        console.log(typeof add) //function
+
+        add(10,20)
+        add('Sunil',' Joseph')
+        add(12.5,23.1)
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #result_region{
+            margin:50px;   
+            border:2px solid black;
+            border-radius:15px;
+            padding:10px;  
+            width:50%;       
+        }
+    </style>
+    <title>Data Types</title>
+</head>
+<body>
+    <div>
+        <h2>Java Script | Data Types</h2>
+    </div>
+    <h2 id="result_region"></h2>
+
+    <script>
+        let region = document.getElementById('result_region')
+
+        let name = 'Sunil'
+        let age = 40
+        let workingStatus = true
+
+        region.innerHTML = `Name: ${name} || Type: ${typeof name}<br><br>
+        Age: ${age} || Type: ${typeof(age)} <br><br>
+        Working Status: ${workingStatus} || Type: ${typeof(workingStatus)}`
+    </script>
+</body>
+</html>

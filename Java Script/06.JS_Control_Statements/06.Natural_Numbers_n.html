@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div{
+            text-align:center;
+            width:700px;
+            margin:auto;
+            border-radius:20px;
+            margin-bottom:30px;
+            font-size:22px;
+        }
+        input{
+            font-size:20px;
+        }
+    </style>
+    <title>n Naturals</title>
+</head>
+<body>
+    <div>
+        How Many Natural Numbers
+        <input type="number" id=txtNum size=4>
+        <input type="button" value="F i n d" onclick="displayNaturals()">
+    </div>
+    <div id="nat_nums"></div>
+
+    <script>
+        function displayNaturals()
+        {
+          //get the reference of textField
+          let text_field = document.getElementById('txtNum')
+
+          //get the data entered in textField
+          let num = text_field.value
+          
+          //logic to get the num naturals numbers
+          let result = ''
+          let n = 1
+          while(n <= num)
+          {
+            if(n==1)
+             result = n  
+            else
+             result = result+", "+n
+             
+            n++; 
+          }
+
+          //show the result value in the necessary place
+          document.getElementById('nat_nums').innerHTML = result
+        }
+    </script>
+</body>
+</html>
