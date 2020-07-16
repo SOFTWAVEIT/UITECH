@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin-bottom:500px;
+        }
+        /*setting properties for the table with id=my_table*/
+        #my_table{
+            font-size:18px;
+            width:60%;
+            background-color:cornflowerblue;           
+            margin:auto;
+            border-collapse:collapse;
+            box-shadow:0 0 10px black;
+            /*
+            background-image:url('images/computer-2.jpg');
+            background-size:cover;
+            */
+        }
+        #my_table tr{
+            height:45px;
+        }
+        #my_table thead tr{
+            background-color:orangered;
+        }
+        #my_table td, #my_table th{
+            border:1px solid black;
+            padding:10px;
+        }
+    </style>
+    <title>HTML | Tables</title>
+</head>
+
+<body>
+    <div>
+        <h2>Simple Table</h2>
+        <table border=1>
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Course</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>UI Technologies</td>
+                    <td>13.07.2020</td>
+                    <td>07.00AM</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Advanced UI Technologies</td>
+                    <td>14.07.2020</td>
+                    <td>09.00AM</td>
+                </tr>     
+                <tr>
+                    <td>03</td>
+                    <td>Data Science</td>
+                    <td>15.07.2020</td>
+                    <td>11.00AM</td>
+                </tr>     
+                <tr>
+                    <td>04</td>
+                    <td>Java Script</td>
+                    <td>14.07.2020</td>
+                    <td>06.00PM</td>
+                </tr>                                      
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2>Table with colspan</h2>
+        <table border=1>
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Name</th>
+                    <th colspan="2">Contact Nos</th>                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>Sunil Joseph</td>
+                    <td>9848586878</td>
+                    <td>40-23842517</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Harsha Vardhan</td>
+                    <td>6848586878</td>
+                    <td>40-23842516</td>
+                </tr>              
+                <tr>
+                    <td>03</td>
+                    <td>Vamsi Krishna</td>
+                    <td colspan="2">9848586878</td>                    
+                </tr>                
+                <tr>
+                    <td>04</td>
+                    <td>Naveen</td>
+                    <td>9848586878</td>
+                    <td>40-23842517</td>
+                </tr>                  
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" align="center" bgcolor="lightgreen">Personal Details</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div>
+        <h2>Table with rowspan</h2>
+        <table border=1>
+            <caption align="bottom">Employee Details</caption>
+            <tr>
+                <th>Sl No</th>
+                <th>Name</th>
+                <th>Contact No</th>
+            </tr>
+            <tr>
+                <td rowspan="2">01</td>
+                <td rowspan="2">Sunil Joseph</td>
+                <td>9848586878</td>                
+            </tr>
+            <tr>                
+                <td>40-23841754</td>                
+            </tr>    
+            <tr>
+                <td rowspan=2>02</td>
+                <td rowspan=2>Harsha Vardhan</td>
+                <td>9848586878</td>                
+            </tr>
+            <tr>                
+                <td>40-23841754</td>                
+            </tr>                 
+            <tr>
+                <td rowspan=2>03</td>
+                <td rowspan=2>Naveen</td>
+                <td>9848586878</td>                
+            </tr>
+            <tr>               
+                <td>40-23841754</td>                
+            </tr>                 
+        </table>
+    </div>
+
+    <div>
+        <h2>Custom Table with attributes</h2>
+        <table border=1 width="75%" align="center" bgcolor="cornflowerblue" cellpadding="10px" cellspacing="10px" background="images/team-1.jpg">
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Course</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>UI Technologies</td>
+                    <td>13.07.2020</td>
+                    <td>07.00AM</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Advanced UI Technologies</td>
+                    <td>14.07.2020</td>
+                    <td>09.00AM</td>
+                </tr>     
+                <tr>
+                    <td>03</td>
+                    <td>Data Science</td>
+                    <td>15.07.2020</td>
+                    <td>11.00AM</td>
+                </tr>     
+                <tr>
+                    <td>04</td>
+                    <td>Java Script</td>
+                    <td>14.07.2020</td>
+                    <td>06.00PM</td>
+                </tr>                                      
+            </tbody>
+        </table>
+        <!-- another table-->
+        <table style="margin-top:50px;" frame="box" rules="all">
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Course</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>UI Technologies</td>
+                    <td>13.07.2020</td>
+                    <td>07.00AM</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Advanced UI Technologies</td>
+                    <td>14.07.2020</td>
+                    <td>09.00AM</td>
+                </tr>     
+                <tr>
+                    <td>03</td>
+                    <td>Data Science</td>
+                    <td>15.07.2020</td>
+                    <td>11.00AM</td>
+                </tr>     
+                <tr>
+                    <td>04</td>
+                    <td>Java Script</td>
+                    <td>14.07.2020</td>
+                    <td>06.00PM</td>
+                </tr>                                      
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h2>Custom Table with CSS</h2>
+        <table id="my_table">
+            <thead>
+                <tr>
+                    <th>Sl No</th>
+                    <th>Course</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>UI Technologies</td>
+                    <td>13.07.2020</td>
+                    <td>07.00AM</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Advanced UI Technologies</td>
+                    <td>14.07.2020</td>
+                    <td>09.00AM</td>
+                </tr>     
+                <tr>
+                    <td>03</td>
+                    <td>Data Science</td>
+                    <td>15.07.2020</td>
+                    <td>11.00AM</td>
+                </tr>     
+                <tr>
+                    <td>04</td>
+                    <td>Java Script</td>
+                    <td>14.07.2020</td>
+                    <td>06.00PM</td>
+                </tr>                                      
+            </tbody>
+        </table>        
+    </div>
+</body>
+
+</html>
