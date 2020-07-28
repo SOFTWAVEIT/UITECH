@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin-bottom:600px;
+        }
+        div{
+            width:500px;
+            height:200px;            
+            box-shadow: 0 0 10px black;
+        }
+        #bg_color{
+            background-color:rgb(8, 124, 37);
+        }
+        #bg_image{
+            background-image:url('images/computer-2.jpg');            
+        }
+        #bg_repeat{
+            background-color:gray;
+            background-image:url('images/nature.jpg');
+            background-repeat:repeat-x;
+        }
+        #bg_attachment{
+            background-image:url('images/team-3.jpg');
+            background-attachment: fixed;
+        }
+        #bg_position{
+            background-image:url('images/nature.jpg');
+            background-repeat: no-repeat;
+            background-position:center center; 
+        }
+        #bg_size{
+            width:600px;
+            height:350px;
+            background-image:url('images/computer-3.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        #short_hand{
+            width:600px;
+            height:350px;
+            background:forestgreen url('images/nature.jpg') no-repeat scroll center center
+        }
+        #bg_clip{
+            background-color:darkred;
+            border:20px dashed green;
+            padding:20px;
+            background-clip:content-box;
+        }
+    </style>
+    <title>CSS | Background Properties</title>
+</head>
+<body>
+    <h2>Background-Color</h2>
+    <div id="bg_color"></div>
+
+    <h2>Background-Image</h2>
+    <div id="bg_image"></div>
+
+    <h2>Background-Repeat</h2>
+    <div id="bg_repeat"></div>
+
+    <h2>Background-Attachment</h2>
+    <div id="bg_attachment"></div>
+
+    <h2>Background-Position</h2>
+    <div id="bg_position"></div>
+
+    <h2>Background-Size</h2>
+    <div id="bg_size"></div>
+
+    <h2>Background Shorthand</h2>
+    <div id="short_hand"></div>
+
+    <h2>Background-Clip</h2>
+    <div id="bg_clip"></div>
+</body>
+</html>

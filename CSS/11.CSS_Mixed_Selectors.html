@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        ol,ul{
+            background-color:cornflowerblue;
+            margin:30px;
+            padding-top:10px;
+            padding-bottom:10px;
+            padding-right:10px;
+            font-size:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px black;
+        }
+        li{
+            padding:10px;
+            margin-bottom:10px;
+            background-color:orangered;
+            border-radius:10px;
+        }
+        ol li:first-child{
+            background-color:palegreen;
+        }
+        ol li:last-child{
+            background-color:palevioletred
+        }
+        ol li:nth-child(2){
+            background-color:purple;
+        }
+        ol li:nth-child(3){
+            background-color:red;
+        }  
+
+        ul li:nth-child(even){
+            background-color:saddlebrown
+        } 
+        ul li:nth-child(odd){
+            background-color:palegreen
+        }              
+    </style>
+    <title>CSS | Mixed Selectors</title>
+</head>
+<body>
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Java Script</li>
+        <li>jQuery</li>
+        <li>Bootstrap</li>
+    </ol>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Java Script</li>
+        <li>jQuery</li>
+        <li>Bootstrap</li>
+    </ul>
+</body>
+</html>
