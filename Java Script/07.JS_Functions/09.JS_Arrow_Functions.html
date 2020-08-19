@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Arrow Function | ES6</h2>
+    </div>
+
+    <script> 
+    /* function to generate first "n" natural numbers */ 
+    let printNaturals = (endNo) => {
+        let res = '';
+        for(let i=1;i<=endNo;i++){
+            if(i==1)
+              res = i;
+            else
+              res = `${res}, ${i}`;
+        }
+        console.log(`First ${endNo} Naturals Numbers are:`)
+        console.log(res)
+    }//function
+    </script>
+
+    <script>
+        console.log('Data Type of printNaturals = '+ typeof(printNaturals)); //function
+
+        //function calls
+        printNaturals(10);
+        printNaturals(15);
+        printNaturals(5);
+    </script>
+</body>
+</html>

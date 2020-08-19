@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Methods</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Array | Methods</h2>
+    </nav>
+
+    <script>
+        let courses = ['HTML','CSS','Java Script','jQuery','Bootstrap'];
+        console.log(`${courses} | Size=${courses.length}`);
+        console.log(`Element @ index 2 = ${courses[2]}`);
+
+        //remove element @ index 2
+        delete courses[2];
+
+        console.log(`${courses} | Size=${courses.length}`);
+        console.log(`Element @ index 2 = ${courses[2]}`);
+        console.log(`------------------------------`)
+
+        let courses1 = ['HTML','CSS','Java Script','jQuery','Bootstrap'];
+        console.log(`${courses1} | Size=${courses1.length}`);
+        console.log(`Element @ index 2 = ${courses1[2]}`);
+
+        //let removed_elements = courses1.splice(2); //all element from index 2 will be removed from array
+        let removed_elements = courses1.splice(2,1);
+        console.log(`Removed Elements = ${removed_elements}`);
+        console.log(`${courses1} | Size=${courses1.length}`);
+        console.log(`Element @ index 2 = ${courses1[2]}`);
+    </script>
+    <script>  
+        let arr = ["I", "study", "JavaScript", "right", "now"];        
+        arr.splice(0, 3, "Let's", "practice");        
+        console.log(arr)
+    </script>
+</body>
+</html>

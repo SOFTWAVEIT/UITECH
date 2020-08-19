@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #nat_numbers
+        {
+            margin:50px;
+            font-size:24px;
+            background:linear-gradient(45deg,darkslategray,blueviolet);
+            color:aquamarine;
+            width:400px;
+            padding:10px;
+            border-radius:20px;
+            box-shadow:0 0 10px black;
+            line-height:1.5;
+        }
+    </style>
+    <title>Natural Numbers</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | First 10 Natural Numbers_04</h2>
+    </nav>
+
+    <div id="nat_numbers"></div>
+
+    <script>
+        let res = `First 10 Natural Numbers are: <br>`;
+        
+        let n = 1;
+        while(n < 11)
+        {
+            if(n == 1)
+              res = `${res}${n}`
+            else  
+              res=`${res}, ${n}`;
+              
+            n++;
+        } //while close
+
+        document.getElementById('nat_numbers').innerHTML = res;
+    </script>
+</body>
+</html>

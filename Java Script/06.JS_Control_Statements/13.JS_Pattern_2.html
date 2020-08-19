@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        div{
+            margin:30px;
+            font-size:20px;
+            font-family:'verdana',serif;            
+            font-weight:bold;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Pattern | 02</h2>
+    </nav>
+
+    <div id="pattern_region"></div>
+
+    <script>
+        let res='';
+        for(let i=10;i>0;i--)
+        {
+         for(let j=1;j<=i;j++)
+         {
+          res = `${res}* `   
+         }//for  
+         res=`${res}<br>`; 
+        }//for
+
+        document.getElementById('pattern_region').innerHTML = res;
+    </script>
+</body>
+</html>

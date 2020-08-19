@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #container{
+            width:60%;
+            margin:50px auto;
+            background-color:gray;
+            border-radius:15px;
+            box-shadow:0 0 10px black;            
+        }
+        #header{
+            background:linear-gradient(45deg,black 50%, orangered 50%);
+            color:white;
+            padding:10px;
+            border-radius:15px 15px 0px 0px;
+        }
+        h2{
+            margin:0px;
+        }
+        #data_entry{
+            text-align:center;
+            padding:20px;
+        }
+        input, span,button{
+            font-size:20px;
+            display:inline-block;
+        }
+        .btn-primary{
+            border:none;
+            background-color:cornflowerblue;
+            padding:4px 20px;
+            font-weight:bold;
+        }   
+        #result{
+            width:100px;
+        }   
+        #operator{
+            width:25px;
+            text-align:center;
+        }  
+    </style>
+    <title>Calculator</title>
+</head>
+<body>
+    <div id="container">
+        <!-- header-->
+        <div id="header">
+            <h2>Calculator</h2>
+        </div>
+
+        <!--data entry and result section-->
+        <div id="data_entry" style="margin-top:10px">
+            <input type="text" size="5" id="txtNum1">
+            <span id="operator"></span>
+            <input type="text" size="5" id="txtNum2">
+            <span id="equals">=</span>
+            <span id="result" class="btn-primary" style="background-color:lightgreen;border:1px solid black">RESULT</span>
+
+            <div style="margin-top:40px">
+                <button class="btn-primary" onclick="operation(this)">+</button>
+                <button class="btn-primary" onclick="operation(this)">-</button>
+                <button class="btn-primary" onclick="operation(this)">x</button>
+                <button class="btn-primary" onclick="operation(this)">/</button>
+                <button class="btn-primary" onclick="clearFields()">CLEAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function operation(id)
+        {
+            let operand = id.innerText;
+            document.getElementById('operator').innerText = operand;
+            let res = ''
+            let x = document.getElementById('txtNum1').value;
+            let y = document.getElementById('txtNum2').value;
+
+            x = Number(x);
+            y = Number(y);
+
+            if(operand=='+')
+              res = x+y;
+            else if(operand == '-')
+              res = x-y;
+            else if(operand == 'x')
+             res=x*y;
+            else
+              res = x/y;
+            
+            document.getElementById('result').innerText = res;  
+        }
+
+
+        function clearFields(){
+            document.getElementById('operator').innerText='';
+            document.getElementById('txtNum1').value = '';
+            document.getElementById('txtNum2').value = '';
+            document.getElementById('result').innerText = 'RESULT';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #header{
+            background:linear-gradient(45deg, black, limegreen);
+            color:white;
+        }
+        #wrapper{
+            margin:40px;
+            text-align:center;
+        }
+        .btn{
+            width:280px;
+            color:white;
+            background:linear-gradient(45deg,black 50%, orangered 50%);
+        }
+        .btn:hover{
+            background:linear-gradient(black,black)
+        }
+    </style>
+    <title>Dialog Boxes</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Dialogs</h2>
+    </div>
+
+    <div id="wrapper">
+        <button class="btn" onclick="showMessage()">Message Dialog</button>
+
+        <button class="btn" onclick="showConfirm()">Confirmation Dialog</button>   
+        
+        <button class="btn" onclick="showInput()">Input Dialog</button>           
+    </div>
+
+    <script>    
+     let showMessage = ()=>alert('Welcome to Softwave IT');
+
+     let showConfirm = () => {
+         let status = confirm('Do you want to proceed?')
+         console.log(`Proceed - ${status}`);
+     }
+
+     function showInput()
+     {
+       let otp = prompt('Enter OTP','0000')  
+       console.log('OTP = '+otp);
+     }
+    </script>
+</body>
+</html>

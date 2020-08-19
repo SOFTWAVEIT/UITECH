@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        div {
+            margin: 20px 50px;
+            font-size: 24px;
+            width: 700px;
+        }
+
+        input {
+            font-size: 22px;
+        }
+
+        .btn {
+            margin: 0px;
+        }
+    </style>
+    <title>Natural Numbers</title>
+</head>
+
+<body>
+    <!-- header section-->
+    <nav id="header">
+        <h2>Java Script | First "n" Natural Numbers_07</h2>
+    </nav>
+
+    <!-- data entry section-->
+    <div id="data_entry">
+        How many Natural Numbers:
+        <input type="text" size="5" autofocus id="txtNum">
+        <button class="btn" onclick="findNaturals()">F i n d</button>
+    </div>
+
+    <!-- result section-->
+    <div id="naturals_result"></div>
+
+    <script>
+        function findNaturals() {
+            //get the reference of text field
+            let txtNum = document.getElementById('txtNum');
+            //get the value of the text field
+            let num = txtNum.value;
+            //alert(num);
+            //alert(typeof num)   
+            //alert(isNaN(num)) 
+
+            let naturals = '';
+
+            if (!isNaN(num)) {
+                let n = 1;
+                while (n <= num) {
+                    if (n == 1)
+                        naturals = `${naturals}${n}`
+                    else
+                        naturals = `${naturals}, ${n}`
+
+                    n++;
+                }//while
+                document.getElementById('naturals_result').style.color='black'
+                document.getElementById('naturals_result').innerHTML = naturals;
+            }//if
+            else{
+                document.getElementById('naturals_result').innerHTML = 'Please enter a valid number';
+                document.getElementById('naturals_result').style.color='red'
+            }//if
+        }//function
+    </script>
+</body>
+
+</html>

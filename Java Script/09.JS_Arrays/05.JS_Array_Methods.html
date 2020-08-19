@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Methods</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Array | Methods</h2>
+    </nav>
+
+    <script>
+        let courses = ['HTML','CSS'];
+        console.log(courses+ ' | Size = '+courses.length);
+        
+        console.log(`--push(items) -  adding elements to end of array --`)
+        courses.push('Java Script','jQuery');
+        console.log(courses+ ' | Size = '+courses.length);
+        
+        console.log(`-- unshift(items) - adding elements to beginning of array --`)
+       //courses.unshift('Internet')
+       courses.unshift('Internet','WWW')
+       console.log(courses+ ' | Size = '+courses.length);
+
+       console.log(`-- pop() - to take out last element of Array --`)
+       console.log(courses.pop())
+       console.log(courses+ ' | Size = '+courses.length);
+       
+       console.log(`-- shift() - to take out first element of Array --`)
+       console.log(courses.shift())
+       console.log(courses+ ' | Size = '+courses.length);
+    </script>
+</body>
+</html>

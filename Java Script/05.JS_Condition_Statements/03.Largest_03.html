@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #largest{
+            margin:50px;
+            width:320px;
+            background:linear-gradient(45deg,black 50%, darkred 50%);
+            color:white;
+            text-align:center;
+            padding:10px;
+            font-family:'comic sans ms',serif;
+            font-size:20px;
+            border-radius:15px;
+            box-shadow:0 0 10px black;
+        }
+    </style>
+    <title>Largest of 03</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Largest of 3 Numbers</h2>
+    </div>
+
+    <div id="largest"></div>
+
+    <script>
+        let a=10, b=10, c=10, lar;
+        if((a>=b) && (a>=c)){
+            lar = a;
+        }
+        if((b>=a) && (b>=c)){
+            lar = b;
+        }
+        if((c>=a) && (c>=b)){
+            lar = c;
+        }
+
+        document.getElementById('largest').innerHTML = `Largest among (${a},${b},${c}) is ${lar}`;
+    </script>
+</body>
+</html>

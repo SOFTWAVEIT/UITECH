@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #msg{
+            margin:50px;
+            width:320px;
+            background:linear-gradient(45deg,black 50%, darkred 50%);
+            color:white;
+            text-align:center;
+            padding:10px;
+            font-family:'comic sans ms',serif;
+            font-size:28px;
+            border-radius:15px;
+            box-shadow:0 0 10px black;
+        }
+    </style>
+    <title>Geetings</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Greetings based on Time</h2>
+    </div>
+
+    <div id="msg"></div>
+
+    <script>
+      let time = 10;
+      let greetings = '';
+      
+      if(time>0 && time <12){
+          greetings = 'Good Morning';
+      }
+      else if(time>=12 && time <16){
+          greetings = 'Good Afternoon';
+      }
+      else if(time>=16 && time < 24){
+          greetings = 'Good Evening';
+      }
+      else{
+          greetings = 'Invalid Time';
+      }
+
+      document.getElementById('msg').innerHTML = greetings;
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Function Types</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Function Types</h2>
+    </div> 
+    <script>
+        //1) function with No Parameters and No Return
+        function greet()
+        {
+         console.log('Welcome Guest, to Softwave IT Solutions');   
+        }
+
+        //2) function with Parameters and No Return
+        function greetings(name)
+        {
+          console.log(`Welcome ${name}, to Softwave IT Solutions`);  
+        }
+
+        //3) function with No Parameters and With Return
+        function getOTP()
+        {
+          let rand = Math.random(); //will return a random number between 0 and 1
+          rand = rand*10000;
+          let otp = parseInt(rand);
+          return otp; 
+        }
+
+        //4) function with Parameters and with Return
+        function addNum(x, y)
+        {
+            let s = x+y;
+            return s;
+        }
+
+        //function calls
+        greet(); 
+        greetings('Rajesh');
+
+        let otp = getOTP();
+        console.log(`OTP = ${otp}`);
+
+        console.log('Sum = '+ addNum(10,6));
+        console.log(`Sum = ${addNum(67,34)}`);
+    </script>   
+</body>
+</html>

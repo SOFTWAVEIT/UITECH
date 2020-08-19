@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Arrow Function | ES6</h2>
+    </div>
+
+    <script>  
+       /*
+        //1) function defintion    
+        function greet(){
+            console.log(`Welcome to Softwave IT Solutions`)
+        }
+       */
+       /*
+        //2) function expression    
+        let greet = function(){
+            console.log(`Welcome to Softwave IT Solutions`)
+        }      
+       */
+        //3) arrow function  - a new feature of ES6
+        let greet = () => {
+            console.log(`Welcome to Softwave IT Solutions`)
+        }
+        //function call
+        greet();
+    </script>
+
+    <script>
+        let add = (x=0,y=0)=>{
+            console.log('Sum = '+(x+y))
+        }
+
+        add(10,20);
+    </script>
+
+    <script>
+        let sum = (x=0,y=0)=>(x+y)
+
+        console.log('Sum = '+sum(5,6));
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #data_entry,#output_region {
+            width:60%;
+            margin:40px auto;
+            font-size:22px;
+            text-align:center;
+            background:linear-gradient(45deg,darkslategray,blueviolet);;
+            color:white;
+            padding:10px;
+            border-radius:15px;
+        }
+        #output_region{
+            display:none;
+        }
+        input{
+            font-size:20px;
+        }
+    </style>
+    <title>Odd Numbers Between</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Odd Numbers Between</h2>
+    </div>
+    <!-- data entry section -->
+    <div id="data_entry">
+        Odd Numbers between 
+        <input type="text" id="input_one" autofocus size="5">
+        and 
+        <input type="text" id="input_two" size="5">
+        <input type="button" value="S h o w" onclick="findOdds()">
+    </div>
+    <!-- output section -->
+    <div id="output_region"> </div>
+
+    <script src="odd_numbers_between.js"></script>
+</body>
+</html>

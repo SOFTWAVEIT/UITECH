@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Methods</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Array | Methods</h2>
+    </nav>
+
+    <script>
+        let courses = ['HTML','CSS','Java Script','jQuery','Bootstrap','AJAX','HTML'];
+        console.log(courses);
+        console.log(`No of courses = ${courses.length}`);
+
+        console.log(`--- indexOf() function of Array ----`)
+        console.log(`Index of HTML = ${courses.indexOf('HTML')}`);
+
+        console.log(`--- lastIndexOf() method ----`)
+        console.log(`Last Index of HTML = ${courses.lastIndexOf('HTML')}`)
+
+        console.log(`--- reverse() function of arrays ---`)
+        courses.reverse();
+        console.log(courses);
+        
+        console.log(`--- Array Concatenation ---`)
+        let arr1 = ['C','CPP'];
+        let arr2 = ['Core Java','Adv Java','Hibernate','Spring'];
+        let arr3 = arr1.concat(arr2);
+        console.log(arr1)
+        console.log(arr2)
+        console.log(arr3);
+        console.log(`${arr3}`)
+
+        let arr4 = arr1.concat('HTML','CSS',arr2)
+        console.log(arr4)
+    </script>
+</body>
+</html>

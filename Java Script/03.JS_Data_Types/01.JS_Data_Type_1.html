@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Data Types</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Data Types</h2>
+    </div>
+
+    <script>
+        let firstName = 'Sunil';
+        console.log(firstName + " - " + typeof(firstName)); 
+        console.log(`${firstName} - ${typeof(firstName)}`);
+
+        let lastName = "Joseph";
+        console.log(`${lastName} - ${typeof lastName}`);
+
+        let age = 38;
+        console.log(`${age} - ${typeof age}`);
+
+        age = 38.5;
+        console.log(`${age} - ${typeof age}`);
+
+        age = 39n;
+        console.log(`${age} - ${typeof age}`); //bigint
+
+        //age = 39;
+        age = BigInt(39);
+        console.log(`${age} - ${typeof age}`);
+
+        let workingStatus = true;
+        console.log(workingStatus+" - "+ typeof workingStatus)
+
+        let someData;
+        console.log(`${someData} - ${typeof someData}`);
+
+
+        let data = null;
+        console.log(`${data} - ${typeof data}`);
+
+        console.log('Type of alert = ' + typeof(alert));
+
+        console.log(null == undefined) //true
+        console.log(null === undefined) //false
+
+        let data1 = 10;
+        let data2 = '10';
+        console.log(data1 == data2) //true
+        console.log(data1 === data2) //false
+    </script>
+</body>
+</html>

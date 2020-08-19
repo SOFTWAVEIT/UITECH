@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Variable Scope</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Variable Scope</h2>
+    </div>
+
+    <script>     
+        let n = 11; //global variable
+        var x = 11;
+        {
+         let n = 12; //block scope
+         var x = 12; //function scope   
+         console.log(n) //12
+         console.log(x) //12
+
+         //let z = 35;   
+         z = 35; //global variable
+         console.log(z); //35
+        }
+        console.log(n) //11
+        console.log(x) //12
+        console.log(z) 
+        console.log(`-------------------------------`)
+    </script>
+
+    <script>
+        /* function scope */
+        for(var i=1;i<=5;i++){
+            console.log(`(var)Inside for - ${i}`);
+        }
+        console.log(`(var)Outside for - ${i}`); //6
+        console.log(`-------------------------------`)
+    </script>
+    
+    <script>
+        /* block scope */
+        for(let j=1; j<=5;j++){
+            console.log(`(let)Inside for - ${j}`)
+        }
+        console.log(`(let)Outside for - ${j}`) //Uncaught ReferenceError: j is not defined
+    </script>
+</body>
+</html>

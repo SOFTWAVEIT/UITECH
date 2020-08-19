@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Methods</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | Array | Practicals</h2>
+    </nav>
+
+    <script>
+        let employees = [
+            {
+                name: 'Sunil',
+                age: 40,
+                designation: 'Manager',
+                active: true
+            },
+            {
+                name: 'Naveen',
+                age: 35,
+                designation: 'Sr.Manager',
+                active: false
+            },
+            {
+                name: 'Rahul',
+                age: 25,
+                designation: 'Software Engineer',
+                active: true
+            },
+            {
+                name: 'Harsha',
+                age: 32,
+                designation: 'Team Lead',
+                active: false
+            }
+        ];   
+        //get the number of employees    
+        console.log('No of Employees = ' + employees.length)     
+
+        console.log(employees);
+
+        console.log('---Employee Details ---')
+        for(let emp of employees)
+        {
+         console.log(`${emp.name} | ${emp.age} | ${emp.designation} | ${emp.active}`)   
+        }   
+
+        console.log(`---Active Employees ---`);
+        for(let emp of employees)
+        {
+         if(emp.active){   
+            console.log(`${emp.name} | ${emp.age} | ${emp.designation} | ${emp.active}`)   
+         }
+        }   
+
+        console.log(`---In-Active Employees ---`);
+        for(let emp of employees)
+        {
+         if(!emp.active){   
+            console.log(`${emp.name} | ${emp.age} | ${emp.designation} | ${emp.active}`)   
+         }
+        } 
+
+        console.log(`--- Active Employees using filter function ---`);
+        let activeEmployees = employees.filter(function(emp){
+            return emp.active;
+        })
+        console.log(activeEmployees);
+    </script>
+</body>
+
+</html>

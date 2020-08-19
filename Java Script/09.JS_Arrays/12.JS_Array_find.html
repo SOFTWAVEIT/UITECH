@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Methods</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Array | find()</h2>
+    </nav>
+
+    <script>
+       let ages = [15,18,2,1,26,78];
+
+       function checkAge(age){
+         //alert(age);  
+         return age >= 18;
+       }
+
+       let data = ages.find(checkAge);
+
+       console.log(data);
+    </script>    
+</body>
+</html>

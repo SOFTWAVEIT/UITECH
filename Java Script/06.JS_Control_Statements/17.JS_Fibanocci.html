@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #result{
+            font-size:22px;
+            margin:50px;
+            line-height:2;
+            font-weight:bold;
+        }
+    </style>
+    <title>Fibanocci</title>
+</head>
+<body>
+    <nav id=header>
+        <h2>Java Script | Fibanocci Series</h2>
+    </nav>
+
+    <div id="result"></div>
+
+    <script>
+        let res = '';
+        let x=1, y=0, z=0, count=1;
+        //debugger;
+        while(count <= 15)
+        {
+           if(res.length==0)
+             res=z;
+           else
+             res=`${res}, ${z}`;
+
+           z = x+y;
+           x=y;
+           y=z;
+           count++;     
+        }
+
+        document.getElementById('result').innerHTML = 'First 15 elements of Fibanocci series:<br>'+res
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Methods</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Array | join()</h2>
+    </nav>
+
+    <script>
+        let courses = ['HTML','CSS','Java Script','jQuery','Bootstrap'];
+        console.log(courses);
+        console.log(`Type of courses = ${typeof(courses)}`);
+        console.log(`Size = ${courses.length}`);
+
+        let courses_1 = courses.join();
+        console.log(courses_1);        
+        console.log(`Type of courses_1 = ${typeof(courses_1)}`);
+        console.log(`Size = ${courses_1.length}`);
+
+        let courses_2 = courses.join(' * ');
+        console.log(courses_2);
+    </script>    
+</body>
+</html>

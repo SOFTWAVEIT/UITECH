@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div{
+            margin:20px 30px;
+        }
+        button{
+            background:none;
+            padding:10px;
+            width:220px;
+            border-radius:15px;
+            border: 1px solid black;
+            font-size:20px;
+        }
+        button:hover{
+            border:none;
+            background-color:darkviolet;
+            color:white;
+            box-shadow:0 0 10px black;
+        }
+        table{
+            width:450px;
+            border-collapse: collapse;
+            font-size:18px;
+            box-shadow:0 0 10px black;
+            background-image:url('../../HTML/images/team-1.jpg');
+            background-size:cover;
+        }
+        th,td{
+            border:1px solid black;
+        }
+        tr{
+            height:45px;
+        }
+    </style>
+    <title>Report Card</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Report Card</h2>
+    </nav>
+    <!-- buttons section -->
+    <div>
+        <button onclick="marksEntry()">Marks Entry</button>
+        <button onclick="generateReportCard()">Generate Report Card</button>
+    </div>
+
+    <!-- report card region -->
+    <div style="margin-top:50px;">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan=2>STUDENT REPORT CARD</th>
+                </tr>
+                <tr>
+                    <th colspan="2" style=text-align:left>NAME: 
+                        <span id="student_name">________________</span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="student_marks"></tbody>
+            <tfoot id="student_aggregate"></tfoot>
+        </table>
+    </div>
+    <script src="reportcard_script.js"></script>
+</body>
+</html>

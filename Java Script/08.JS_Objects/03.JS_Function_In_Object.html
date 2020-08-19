@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>JS | Objects</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Function In Object</h2>
+    </nav>
+
+    <script>
+        let person = {
+            firstName: 'Sunil',
+            lastName: 'Joseph',
+            fullName: function(){
+                return this.firstName+' '+this.lastName;
+            }
+        }
+
+        console.log('First Name = '+ person.firstName)
+        console.log(`Last Name = ${person.lastName}`)
+        console.log('Full Name = '+ person.fullName())
+        console.log('Full Name = '+ person['fullName']())
+
+        console.log(person)
+    </script>
+</body>
+</html>

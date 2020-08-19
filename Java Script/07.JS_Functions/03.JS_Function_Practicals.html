@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin:0px;
+        }
+        #header{
+            background:linear-gradient(45deg, black 50%, darkred 50%);
+            color:white;
+            padding:10px;
+        }
+        #header h2{
+            margin:5px;
+        }
+        .mySettings
+        {
+          width:600px;
+          margin:30px auto;
+          padding:10px;
+          font-size:24px;
+          font-family:'comic sans ms',serif;
+          box-shadow:0 0 10px black;
+          border-radius:20px;
+          background-color:aquamarine;  
+        }
+    </style>
+    <title>Functions</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | Function | Practicals</h2>
+    </nav> 
+    
+    <div id="nat_sequence" class="mySettings">Natural Numbers</div>
+    <div id="odd_sequence" class="mySettings">Odd Numbers</div>
+    <div id="even_sequence" class="mySettings">Even Numbers</div>
+
+    <script>
+        function printSequence(startNo, endNo, step)
+        {
+            let seq='';
+            for(let i=startNo;i<=endNo;i=i+step)
+            {
+                if(i==startNo)
+                  seq=i;
+                else
+                  seq=`${seq}, ${i}`    
+            }
+            console.log(seq)
+            return seq;
+        }
+        
+        //function call
+        let nat_seq = printSequence(1, 10, 1);
+        document.getElementById('nat_sequence').innerText = 'Natural Numbers = '+nat_seq;
+
+        document.getElementById('odd_sequence').innerText = 'Odd Numbers = '+ printSequence(1, 20, 2);
+
+        document.getElementById('even_sequence').innerText = `Even  Numbers = ${printSequence(2, 20, 2)}`;
+    </script>
+</body>
+</html>

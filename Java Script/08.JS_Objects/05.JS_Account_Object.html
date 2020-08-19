@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Bank</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Bank Object</h2>
+    </nav>
+    <div>
+        Enter Amount <input type="text" size=10 autofocus id="txtAmount"> <br><br>
+        <button onclick=depositAction()>Deposit</button>
+        <button onclick=withdrawAction()>Withdraw</button>
+        <button onclick=detailsAction()>Details</button>
+    </div>
+    <div>
+        <p id="bank_operation_status"></p>
+    </div>
+    <script>
+        let txtAmount = document.getElementById('txtAmount')
+        let result_region = document.getElementById('bank_operation_status');
+
+        let acc = {
+            acno: 1000125410,
+            name: 'Sunil',
+            bal: 25000,
+            details: function(){
+                result_region.innerText = `A/C No: ${this.acno} | Name: ${this.name} | Balance: ${this.bal}`
+                return `A/C No: ${this.acno} | Name: ${this.name} | Balance: ${this.bal}`
+                
+            },
+
+            deposit: function(amt){
+                this.bal = this.bal + Number(amt);
+                console.log(`Rs.${amt} Credited | Balance: ${this.bal}`);
+                result_region.innerText = `Rs.${amt} Credited | Balance: ${this.bal}`
+            },
+
+            withdraw: function(amt){
+                if(this.bal >= amt){
+                    this.bal -= amt;
+                    console.log(`Rs. ${amt} Debited | Balance: ${this.bal}`);
+                }
+                else{
+                    console.log(`ERROR: Insufficient Balance!`);
+                }
+            }
+        }
+
+        let depositAction = ()=>{
+            let amount = txtAmount.value;
+            acc.deposit(amount);
+        }
+
+        let detailsAction = () =>{
+            acc.details();
+        }
+    </script>
+</body>
+</html>

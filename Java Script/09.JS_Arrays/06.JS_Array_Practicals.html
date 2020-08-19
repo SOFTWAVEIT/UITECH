@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      div{
+        margin:25px;
+        font-size:18px;
+      }
+      input{
+          font-size:18px;
+      }
+      input[type='button']{
+        background:transparent;
+        padding:4px;
+        width:130px;
+        border:1px solid black;
+        border-radius:20px;
+      }
+      input[type='button']:hover{
+          background-color:rgb(65, 1, 40);
+          color:white;
+          box-shadow: 0 0 10px black;
+          border:1px solid white;
+      }
+    </style>
+    <title>Course List</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Course List</h2>
+    </nav>
+    <div id="data_entry">
+        Enter Course Name: 
+        <input type="text" id="txtCourse" size="20" autofocus>
+        <input type="button" value='Add Course' onclick='addCourse()'>
+    </div>
+    <div id="courses_list_region"></div>
+
+    <script>
+        let course_field = document.getElementById('txtCourse');
+        let courses = new Array();
+
+        function addCourse(){
+            //get course name entered from text field
+            let cname = course_field.value; 
+
+            if(cname.length > 0)
+            {
+                //to check whether the course name is already in list
+                let search_index = courses.indexOf(cname);
+
+                if(search_index == -1 )
+                {
+                  courses.push(cname); //add course name to courses array
+                  course_field.value = ''; //to clear the text field
+
+                  let response_text = '<h2>Courses @ SIT</h2><ol>'
+                  for(let c of courses){
+                      response_text = `${response_text}<li>${c}</li>`
+                  } //for
+                  response_text += '</ol>';
+                  //place the course list in a division
+                  document.getElementById('courses_list_region').innerHTML = response_text;
+                }//if
+                else{
+                    alert(`"${cname}" is already in courses list!`);
+                }//else                  
+            }//if
+            else{
+                alert('Please enter a course name')
+            }//else
+            course_field.focus();
+            console.log(courses);
+        }//function
+    </script>
+</body>
+</html>

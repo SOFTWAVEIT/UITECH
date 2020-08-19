@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Function Expression</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Function | Expressions</h2>
+    </div>
+
+    <script>
+     /*
+     let sum = function addNum(x=0,y=0)
+               {
+                 let s = x+y;
+                 console.log(`${x} + ${y} = ${s}`);   
+               }   
+     */
+
+     //anonymous function expression
+     let sum = function(x=0, y=0){
+                 let s = x+y;
+                 console.log(`${x} + ${y} = ${s}`);   
+               }             
+    </script>
+    <script>
+        console.log('type of sum = '+typeof sum)
+
+        sum(10,20)
+        sum('Softwave','IT')
+        sum(10.2,45.3);
+
+        //console.log(sum)
+    </script>
+</body>
+</html>

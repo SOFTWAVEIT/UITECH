@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #result {
+            font-size: 22px;
+            margin: 50px;
+            line-height: 2;
+            font-weight: bold;
+        }
+    </style>
+    <title>Number_To_Word</title>
+</head>
+
+<body>
+    <nav id=header>
+        <h2>Java Script | Number To Word</h2>
+    </nav>
+
+    <div id="result"></div>
+
+    <script>
+        let num = 84574;
+        document.getElementById('result').innerHTML = num+" = ";
+        let word = '';
+        while (num > 0) {
+            let rem = num % 10;
+            //alert(rem);
+            switch (rem) {
+                case 0:
+                    word = `ZERO ${word}`;
+                    break;
+                case 1:
+                    word = `ONE ${word}`;
+                    break;
+                case 2:
+                    word = `TWO ${word}`;
+                    break;
+                case 3:
+                    word = `THREE ${word}`;
+                    break;
+                case 4:
+                    word = `FOUR ${word}`;
+                    break;
+                case 5:
+                    word = `FIVE ${word}`;
+                    break;
+                case 6:
+                    word = `SIX ${word}`;
+                    break;
+                case 7:
+                    word = `SEVEN ${word}`;
+                    break;
+                case 8:
+                    word = `EIGHT ${word}`;
+                    break;
+                case 9:
+                    word = `NINE ${word}`;
+                    break;
+            }
+            //num = parseInt(num/10)
+            num = Math.floor(num / 10)
+        }//
+        document.getElementById('result').innerHTML = document.getElementById('result').innerHTML+ word;
+    </script>
+</body>
+
+</html>

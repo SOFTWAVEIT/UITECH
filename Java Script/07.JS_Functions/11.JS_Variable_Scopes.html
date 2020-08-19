@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Variable Scope</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | Variable Scope</h2>
+    </div>
+
+    <script>  
+      let x = 20; //global variable   
+      function myFun()
+      {
+       //let x=10;
+       var x = 10;
+       z=30; //global variable
+       console.log(`From inside function - ${x}`)   
+      }
+    </script>
+    <script>
+        myFun(); //function call
+        console.log(`From outside function - ${x}, ${z}`);
+    </script>
+</body>
+</html>

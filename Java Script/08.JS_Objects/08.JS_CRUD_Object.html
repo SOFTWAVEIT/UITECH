@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        #header {
+            background: linear-gradient(45deg, black, orangered);
+            padding: 10px;
+            color: white;
+        }
+
+        #header h2 {
+            margin: 5px 0px;
+        }
+    </style>
+    <title>CRUD in Object</title>
+</head>
+
+<body>
+    <div id="header">
+        <h2>Java Script | CRUD operations in Object</h2>
+    </div>
+    <script>
+        // Create Operation
+        let laptop = {}; //an empty object
+
+        laptop.brand = 'Apple';
+        laptop.color = 'White';
+        laptop.price = 56000;
+        laptop.ramSize = '12GB';
+        laptop.isInsured = true
+        console.log(laptop);
+
+        // READ operation
+        console.log(`Brand : ${laptop.brand}`);
+        console.log(`Color : ${laptop.color}`);
+
+        // UPDATE operation
+        laptop.ramSize = '16GB';
+        console.log(laptop);
+
+        // DELETE operation
+        delete laptop.isInsured;
+        console.log(laptop);
+    </script>
+</body>
+
+</html>

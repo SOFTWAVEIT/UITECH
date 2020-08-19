@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #nat_numbers {
+            margin: 20px 50px;
+            font-size: 24px;            
+            color: aquamarine;
+            width: 400px;            
+            border-radius: 20px;
+            box-shadow: 0 0 10px black;
+            line-height: 1.5;           
+        }
+    </style>
+    <title>Natural Numbers</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | First 10 Natural Numbers_06</h2>
+    </nav>
+
+    <button class="btn" onclick="printNaturals()">Show Naturals</button>
+
+    <div id="nat_numbers"></div>
+
+    <script>
+        /*-- user-defined function --*/
+        function printNaturals() 
+        {
+            let res = `First 10 Natural Numbers are: <br>`;
+            for (let n = 1; n <= 10; n++) 
+            {
+                if (n == 1)
+                    res = `${res}${n}`
+                else
+                    res = `${res}, ${n}`;
+            } //for close
+
+            document.getElementById('nat_numbers').innerHTML = res;
+            //-- to apply CSS property dynamically
+            document.getElementById('nat_numbers').style.padding = '10px';
+            document.getElementById('nat_numbers').style.backgroundColor = 'black';
+            
+            //console.log(res)
+        }//function   
+
+                
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>JS | Functions</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | Function Basics</h2>
+    </nav>
+
+    <script>
+        /*
+        console.log(`First 10 Natural Numbers are:`)
+        let nat = '';
+        for(let n=1;n<=10;n++)
+        {
+            if(n==1)
+             nat=1;
+            else
+             nat=`${nat}, ${n}` 
+        }
+        console.log(nat);
+
+        console.log('------------------------------')
+
+        console.log(`First 10 Natural Numbers are:`)
+        nat = '';
+        for(let n=1;n<=10;n++)
+        {
+            if(n==1)
+             nat=1;
+            else
+             nat=`${nat}, ${n}` 
+        }
+        console.log(nat);
+
+        console.log('------------------------------')       
+
+        console.log(`First 10 Natural Numbers are:`)
+        nat = '';
+        for(let n=1;n<=10;n++)
+        {
+            if(n==1)
+             nat=1;
+            else
+             nat=`${nat}, ${n}` 
+        }
+        console.log(nat);
+
+        console.log('------------------------------')         
+        */
+
+        //function definition to display first 10 Natural Numbers
+        function printNaturals() 
+        {
+            console.log(`First 10 Natural Numbers are:`)
+            let nat = '';
+            for (let n = 1; n <= 10; n++) {
+                if (n == 1)
+                    nat = 1;
+                else
+                    nat = `${nat}, ${n}`
+            }
+            console.log(nat);
+            console.log('------------------------------')  
+        }
+
+        //function call
+        printNaturals();
+        printNaturals();
+        printNaturals();
+    </script>
+</body>
+
+</html>

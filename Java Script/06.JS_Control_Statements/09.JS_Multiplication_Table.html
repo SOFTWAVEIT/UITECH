@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        #data_entry,
+        #table_region {
+            margin: 40px;
+            font-size: 24px;
+        }
+
+        input {
+            font-size: 20px;
+        }
+        #table_region {
+            line-height: 1.5;
+            padding-left: 30px;
+        }
+    </style>
+    <title>Multiplication</title>
+</head>
+
+<body>
+    <div id="header">
+        <h2>Java Script | Multiplication Table</h2>
+    </div>
+
+    <div id="data_entry">
+        Which Numbers Multiplication Table:
+        <input type="text" size="5" autofocus id="mul_num_field" onblur="displayTable()">       
+    </div>
+
+    <div id="table_region"></div>
+
+    <script>
+        function displayTable() {
+            let input_field = document.getElementById('mul_num_field');
+            let num = input_field.value;
+
+            let table = '';
+            if (!isNaN(num)) {
+                for (let i = 1; i <= 10; i++) {
+                    let p = num * i;
+                    table = `${table}${num} x ${i} = ${p}<br>`;
+                } //for  
+                document.getElementById('table_region').innerHTML = table;
+            }//if
+            else {
+                document.getElementById('table_region').innerHTML = 'Please enter a valid number';
+            }
+        }//function
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Methods</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Array | forEach()</h2>
+    </nav>
+
+    <script>
+        let names = ['Anil','Sunil','Naveen','Rahul','Praveen']
+        /*
+        function getName(name){
+            console.log('Participant - '+ name)
+        }
+        */
+
+        function getName(name, index){
+            console.log(`Participant[${index}] = ${name}`)
+        }       
+
+        names.forEach(getName);
+        console.log(`----------------------------`)
+
+        names.forEach(function(name, index){
+            console.log(`Participant[${index}] = ${name}`)
+        })
+
+
+        console.log(`----------------------------`)
+        //based on ES-6
+        names.forEach((name, index)=>{
+            console.log(`Participant[${index}] = ${name}`)
+        })
+
+        console.log(`----------------------------`)
+        let response = ''
+        let iterateName = (name => response += name+'\n')
+
+        names.forEach(iterateName)   
+        console.log(response);     
+    </script>    
+</body>
+</html>

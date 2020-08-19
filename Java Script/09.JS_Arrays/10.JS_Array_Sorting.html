@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Methods</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Array | sort()</h2>
+    </nav>
+
+    <script>
+        let courses = ['HTML','CSS','Java Script','jQuery','Bootstrap'];
+        console.log('Original Array = ' + courses);        
+
+        courses.sort();
+        console.log('Sorted Array = ' + courses);
+        courses.reverse();
+        console.log('Descending Sorted Array = ' + courses);
+
+        console.log('----------sorting an array with numbers -----------')
+        let marks = [86,98,45,6,60,71,100,9,41,63];
+        console.log(marks);
+        //marks.sort();
+        marks.sort(function(a,b){
+            return a-b; //0, +ve , -ve
+        })
+        console.log(marks)
+    </script>    
+</body>
+</html>
