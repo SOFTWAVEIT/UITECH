@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Click Event</title>
+</head>
+<body>
+    <nav>
+        <h2>Java Script | Click Event</h2>
+    </nav>
+    <section>
+        <article>
+            <button onclick="alert('Welcome to Softwave IT')">Show Message</button>
+        </article>
+        <article>
+            <h1 onclick="this.innerText='Softwave IT Solutions'">Click Me to get Company Name</h1>
+        </article>
+        <article>
+            <h1 id="head_1" onclick="changeSettings()">Click Me-1</h1>
+        </article>
+
+        <article>
+            <h1 id="head_2">Click Me-2</h1>
+        </article>
+
+        <article>
+            <h1 id="head_3">Click Me-3</h1>            
+            
+        </article>        
+    </section>
+
+    <script>
+        function changeSettings()
+        {
+         let head_1 = document.querySelector('#head_1');
+         settings(head_1,'Wipro');
+        }
+    </script>
+    <script>
+        let head_2 = document.querySelector('#head_2');
+
+        let changeSettings1 = ()=>{ 
+             settings(head_2,'SoftwaveIT');                     
+        }
+
+        //registering click event with an element
+        head_2.addEventListener('click',changeSettings1)       
+    </script>
+    <script>
+        function settings(element,msg)
+        {
+         element.innerHTML = msg;
+         element.style.background='linear-gradient(45deg,black 50%, orangered 50%)'
+         element.style.color='white'
+         element.style.padding='10px'   
+         element.style.textAlign='center'
+         element.style.width='270px'
+         element.style.borderRadius='15px'            
+        }
+    </script>
+
+    <script>
+        let head_3 = document.getElementById('head_3');
+        head_3.addEventListener('click', function(){
+            settings(head_3,'Infosys');
+        })
+    </script>
+
+    <script>
+        document.addEventListener('click', function(){
+            alert('Clicked on the web page!')
+        })
+    </script>
+</body>
+</html>

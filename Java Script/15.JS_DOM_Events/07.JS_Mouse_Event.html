@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div{
+            margin:20px;
+        }
+        div img{                        
+            border-radius:15px;            
+        }
+    </style>
+    <title>Mouse Event</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Event | mousedown & mouseup</h2>
+    </nav>
+    <div>
+        <img src="../images/bulboff.png" alt="" onmousedown="bulbon(this)" onmouseup="bulboff(this)">
+    </div>
+    <script>
+        function bulbon(element){
+            element.setAttribute('src','../images/bulbon.png');
+            element.style.boxShadow='0 0 10px black';
+        }
+
+        function bulboff(element){
+            element.setAttribute('src','../images/bulboff.png');
+            element.style.boxShadow='none';
+        }       
+    </script>
+</body>
+</html>

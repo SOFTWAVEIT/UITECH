@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #section-1{
+            margin:20px;
+            width:400px;
+            height:200px;
+            background-color:teal;
+            border-radius:20px;
+            box-shadow:0 0 10px black;
+            text-align:center;
+            font-size:30px;
+            line-height:180px;
+            color:white;
+        }
+    </style>
+    <title>Mouse Event</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Event | mousedown & mouseup</h2>
+    </nav>
+    <div id="section-1">Click Me</div>
+    <script>
+        let region = document.querySelector('#section-1');
+
+        //to register mouse event with bulb element
+        region.addEventListener('mousedown', function(){
+            region.innerText='Release Me';
+            region.style.background='linear-gradient(45deg, black 50%, orangered 50%)';
+        })
+
+        region.addEventListener('mouseup', function(){
+            region.innerText='Click Me';
+            region.style.background='linear-gradient(teal, teal)';
+        })       
+    </script>
+</body>
+</html>

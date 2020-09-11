@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin:0px;            
+        }
+        #header{
+            background:linear-gradient(45deg,black 50%,orangered 50%);
+            padding:10px;
+            color:white;
+        }
+        #header h2{
+            margin:5px 0px;
+        }
+    </style>
+    <title>Strings</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | String</h2>
+    </nav>
+    <script>
+        let s1 = 'Java Script' //a string literal
+        let s2 = new String('Java Script') //an object
+        console.log(`${s1} - ${s2}`);
+        console.log(`${typeof(s1)} - ${typeof(s2)}`)
+
+        console.log(`s1==s2 ------> ${s1==s2}`) //true
+        console.log(`s1===s2 ------> ${s1===s2}`) //false
+    </script>
+    <script>
+        //create string as literal
+        let s3 = "SIT";
+        let s4 = 'SIT';
+        console.log(`s3==s4 ----> ${s3==s4}`); //true
+
+        //create string using new
+        let s5 = new String("SIT");
+        let s6 = new String("SIT");
+        console.log(`s5==s6 ----> ${s5==s6}`); //false
+    </script>
+    <script>
+        let str = new String('Softwave');
+        str.x = 'IT';
+        console.log(str)
+        console.log(str.x)
+    </script>
+</body>
+</html>

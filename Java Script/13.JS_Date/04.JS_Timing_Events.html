@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Timing Events</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Timing Events | setTimeout()</h2>
+    </nav>
+    <div style="font-size:20px;margin:30px;">
+        <!--
+        <button style="font-size:20px;padding:10px;width:190px" onclick=setTimeout('alert("Welcome")',3000)>Click Me</button>
+        -->
+
+        <!--
+        <button style="font-size:20px;padding:10px;width:190px" onclick=setTimeout("welcomeMsg()",3000)>Click Me</button>
+        -->
+
+        <button style="font-size:20px;padding:10px;width:190px" onclick=setTimeout(welcomeMsg,3000)>Click Me</button>
+
+        <p id="clock" style="font-size:40px;color:black"> </p>
+    </div>
+
+    <script>
+        function welcomeMsg(){
+            alert('Welcome to Java Script')
+        }
+    </script>
+
+    <script>
+        function showClock(){
+            let d = new Date();
+            let time = d.toLocaleTimeString();
+            document.getElementById('clock').innerHTML = time;
+
+            setTimeout(showClock,1000);//calls the function after 1 second
+        }//function ends
+
+        showClock(); //function call
+    </script>
+</body>
+</html>

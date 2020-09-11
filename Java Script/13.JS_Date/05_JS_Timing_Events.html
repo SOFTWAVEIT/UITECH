@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        p{
+            font-family:'Old English Text MT', serif;
+            font-size:40px;
+            color:blue;
+            font-weight:bolder;
+        }
+    </style>
+    <title>Timing Events</title>
+</head>
+<body onload="showTime()">
+    <nav id="header">
+        <h2>Java Script | Timing Events | setInterval()</h2>
+    </nav>
+    <div style="font-size:20px;margin:30px;">
+        <p id="clock">Clock</p>
+
+        <button style="font-size:20px;padding:10px;width:190px" onclick="clearInterval(handle)">Change Battery</button>
+    </div>
+
+    <script>
+        let region = document.getElementById('clock');
+        
+        let showTime = ()=>{
+            let d = new Date();
+            let time = d.toLocaleTimeString('te-IN',{timeZone:'Asia/Calcutta'});
+            region.innerHTML = time;
+        }//function ends
+
+        //setInterval(showTime,1000)//calls the function repeatedly after every 1 second
+        let handle = setInterval(showTime,1000)
+    </script>
+
+</body>
+</html>

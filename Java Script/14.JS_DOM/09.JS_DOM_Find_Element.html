@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        section{
+            margin:50px;
+            font-size:20px;
+        }
+        .sit{
+            color:blue;
+        }
+    </style>
+    <title>DOM</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | DOM | Find HTML Elements | querySelector(ID)</h2>
+    </nav>  
+    <section>
+        <article>
+            <h2 id="head-main">Article-1</h2>
+            <p>HTML Paragraph</p>
+            <p class="sit">CSS Paragraph</p>
+            <p>Java Script Paragraph</p>
+            <h3 class="sit">End of Course List</h3>
+        </article>
+        <article>
+            <p class="sit">UI Technologies</p>
+        </article>
+        <article>
+            <button style="padding:8px 10px;border-radius:15px" onclick="changeStyles()">Change Styles</button>
+        </article>
+    </section>    
+
+    <script>
+        let changeStyles = ()=>{          
+           let head = document.querySelector('#head-main'); //ID selector
+           if(head != null)
+           {
+            head.style.backgroundColor='teal'; 
+            head.style.color='white';
+            head.style.padding='10px';            
+            head.innerText = 'Softwave IT';
+            head.style.width='300px'
+            head.style.textAlign='center'
+           }         
+        }
+    </script>
+</body>
+</html>   

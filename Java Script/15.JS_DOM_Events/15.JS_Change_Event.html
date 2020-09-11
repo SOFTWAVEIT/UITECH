@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        article{
+            height:70px;
+        }
+        p{
+            font-size:15px;
+            margin:20px;
+        }
+    </style>
+    <title>change event</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Event | change</h2>
+    </nav>
+
+    <section>
+        <article>
+            <p id="text_content">Softwave IT Solutions</p>
+        </article>
+        <article>
+            <input type="radio" name="fsize" value='15px' checked onchange="setFontSize(this)">Small
+            <input type="radio" name="fsize" value='25px' onchange="setFontSize(this)">Medium
+            <input type="radio" name="fsize" value='35px' onchange="setFontSize(this)">Large
+        </article>
+    </section>
+    <section>
+        <div>
+            Select State
+            <select id="state_name_field" onchange="getGST(this)">
+                <option value="">select a State</option>
+                <option value="0">India</option>
+                <option value="1">America</option>
+                <option value="2">England</option>
+                <option value="3">Australia</option>
+                <option value="4">Poland</option>
+                <option value="5">Italy</option>
+                <option value="6">Japan</option>
+            </select>
+            <p id="gst">Select a State</p>
+        </div>
+    </section>
+    <script>
+        let text_context = document.querySelector('#text_content');
+        let setFontSize = (radio)=>{
+            if(radio.checked)
+              text_content.style.fontSize = radio.value
+        }
+    </script>
+    <script>
+        let gst_values = [25,24,18,30,19,20,16];
+        let getGST = (field)=>{
+            let val = field.value;            
+            if(val.length>0)
+             document.querySelector('#gst').innerText = gst_values[val]+'%';
+            else
+            document.querySelector('#gst').innerText = 'Select a State'
+        }
+    </script>
+</body>
+</html>

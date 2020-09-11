@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>JS | Number</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Number Object</h2>
+    </nav>
+    <script>
+        let p = 12
+        let q = 12.0
+        let r = Number(12);
+        let s = new Number(12);
+
+        console.log(`${p}, ${q}, ${r}, ${s}`)
+        console.log(`${typeof(p)}, ${typeof(q)}, ${typeof(r)}, ${typeof(s)}`)
+
+        let t = 12n;
+        let u = BigInt(12);
+        console.log(t,u);
+        console.log(typeof(t), typeof(u))
+
+        console.log(`----- number systems -----`)
+        console.log(12); //12
+        console.log(012); //10
+        console.log(0x12); //18
+        console.log(0b11); //3
+
+        let n = 10;
+        console.log(n.toString(8)); //12
+        n = 18;
+        console.log(n.toString(16)); //12
+
+        n = 3;
+        console.log(n.toString(2)); //11
+    </script>
+</body>
+</html>

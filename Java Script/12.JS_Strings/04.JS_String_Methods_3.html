@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin:0px;            
+        }
+        #header{
+            background:linear-gradient(45deg,black 50%,orangered 50%);
+            padding:10px;
+            color:white;
+        }
+        #header h2{
+            margin:5px 0px;
+        }
+    </style>
+    <title>Strings</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | String | Methods</h2>
+    </nav>
+    <script>
+        let str = 'Java Script is a Scripting Language'
+        console.log(str); //
+
+        let part1 = str.substr(5);
+        console.log(part1); //Script is a Scripting Language
+
+        let part2 = str.substr(5,6);
+        console.log(part2); //Script
+
+        let part3 = str.substring(5,6);
+        console.log(part3); //S
+
+        //let part4 = str.substring(1,5);
+        let part4 = str.substring(5,1);
+        console.log(part4); //ava 
+
+        //let part5 = str.slice(1,5);
+        let part5 = str.slice(5,1);
+        console.log(part5); //<<empty string>>
+
+        console.log(str.toUpperCase());
+        console.log(str.toLowerCase());
+    </script>
+</body>
+</html>

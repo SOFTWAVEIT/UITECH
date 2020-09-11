@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        img{            
+            display:block;
+            margin:50px auto;
+            border:2px solid black;
+            border-radius:15px;
+            padding:5px;
+            box-shadow:0 0 10px black
+        }
+    </style>
+    <title>DOM</title>
+</head>
+<body>
+    <div id="header">
+        <h2>Java Script | DOM | Change Attribute Value</h2>
+    </div>
+    <section>
+        <article>
+            <img src="../../HTML/images/food/burgers-2.jpg" alt="" onmouseover='changeImage()' onmouseout="originalImage()" width="200px" height="100px">
+        </article>
+    </section>
+
+    <script>
+        let image = document.querySelector('img');
+        let changeImage = ()=>{  
+            console.log(image.width)         
+            image.width='400';
+            image.height='200'            
+        }
+        let originalImage = ()=>{              
+            image.setAttribute('width','200')
+            image.setAttribute('height','100')            
+        }
+    </script>
+</body>
+</html>

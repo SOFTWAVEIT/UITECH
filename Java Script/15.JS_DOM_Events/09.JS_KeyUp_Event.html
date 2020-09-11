@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div{
+            margin:50px;
+            font-size:20px;
+        }
+        input{
+            background-color:yellowgreen;
+            padding:5px;
+            border:none;
+            border-radius:5px;
+        }
+    </style>
+    <title>Keyup</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Event | keyup</h2>
+    </nav>
+    <div>
+        Enter Name: 
+        <input type="text" size=30 autofocus id="input_name" onkeyup="changeCase(this.value)">
+        <span id="textCount"></span>
+    </div>
+    <script>
+        let input_field = document.querySelector('#input_name');
+        let textcount_area = document.querySelector('#textCount');
+
+        function changeCase(text)
+        {
+           input_field.value = text.toUpperCase(); 
+           if(text.length>0){
+             textcount_area.innerText = `(${text.length})`
+           }
+           else{
+             textcount_area.innerText = ``  
+           }
+        }
+    </script>
+</body>
+</html>

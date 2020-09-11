@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">   
+    <style>
+        section{
+            margin:50px;
+            color:black;
+            font-size:20px;
+        }
+    </style> 
+    <title>DOM Basics</title>
+</head>
+<body link="blue" alink="red" bgcolor="lightgreen" text="green">
+    <nav id="header">
+        <h2>Java Script | DOM | Basics</h2>
+    </nav>
+    <section>
+        <article id="article_1"><h2>This is DOM Tutorial</h2></article>
+
+        <article id="article_2">
+            <a href="#" name="link1">Link-1</a>
+        </article>
+
+        <article>
+            <a href="#" name="link2">Link-2</a>
+        </article>
+    </section>
+
+    <script>
+        let doc = document;
+        console.log(`Type of doc = ${typeof doc}`);
+        console.log(doc); //HTMLDocument
+
+        console.log(`Title = ${doc.title}`)
+        console.log(`URL = ${doc.URL}`)
+        console.log(`Link Color = ${doc.linkColor}`)
+        console.log(`Active Link Color = ${doc.alinkColor}`)
+
+        console.log(`Background Color = ${document.bgColor}`)
+        console.log(`Foreground Color = ${document.fgColor}`)
+
+        console.log(`No of Links = ${document.links.length}`)
+    </script>
+    <script>
+        //get the reference of an element (article_1)
+        let article_1 = document.getElementById('article_1')
+        let matter_html = article_1.innerHTML
+        console.log(`InnerHTML = ${matter_html}`)
+
+        let matter_text = article_1.innerText
+        console.log(`InnerText = ${matter_text}`)
+
+        //to change content
+        let matter = '<h1>Welcome to Softwave IT</h1>'
+        //article_1.innerHTML = matter
+        article_1.innerText = matter
+
+        console.log(doc.head)
+    </script>
+    
+</body>
+</html>

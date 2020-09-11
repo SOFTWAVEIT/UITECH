@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div{
+            margin:20px;
+        }
+        div img{                        
+            border-radius:15px;
+        }
+    </style>
+    <title>Mouse Event</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Event | mouseover & mouseout</h2>
+    </nav>
+    <div>
+        <img src="../images/bulboff.png" alt="">
+    </div>
+    <script>
+        let bulb = document.querySelector('img');
+
+        let bulbon = () => {
+            bulb.setAttribute('src','../images/bulbon.png');
+            bulb.style.width= '300px'
+            bulb.style.boxShadow='0 0 10px black'
+        }
+
+        let bulboff = () => {
+            bulb.setAttribute('src','../images/bulboff.png');
+            bulb.style.width= '200px'
+            bulb.style.boxShadow='none'
+        }
+
+        //to register mouse event with bulb element
+        bulb.addEventListener('mouseover', bulbon)
+        bulb.addEventListener('mouseout', bulboff)       
+    </script>
+</body>
+</html>

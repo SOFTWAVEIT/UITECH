@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Date</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Date | Human Readable </h2>
+    </nav>
+    <script>
+        let today = new Date();
+
+        console.log(`${today}`);
+        console.log(`Date = ${today.toDateString()}`);
+        console.log(`Time = ${today.toTimeString()}`);
+
+        console.log(`Date = ${today.toLocaleDateString()}`);
+        console.log(`Time = ${today.toLocaleTimeString()}`);
+        console.log(`${today.toLocaleString()}`);
+    </script>
+    <script>
+        console.log(`-- time of different parts of world ---`)
+
+        console.log(`Los Angeles Time = ${today.toLocaleTimeString('en-US',{timeZone:'America/Los_Angeles'})}`)
+
+        console.log(`Chicago Time = ${today.toLocaleTimeString('en-US',{timeZone:'America/Chicago'})}`)
+
+        console.log(`New York Time = ${today.toLocaleTimeString('en-US',{timeZone:'America/New_York'})}`)
+
+        console.log(`London Time = ${today.toLocaleTimeString('en-GB',{timeZone:'Europe/London'})}`)
+
+        console.log(`Australia Time = ${today.toLocaleTimeString('en-AU',{timeZone:'Australia/Sydney'})}`)
+
+        console.log(`Germany Time = ${today.toLocaleTimeString('de-DE',{timeZone:'Europe/Berlin'})}`)
+    </script>
+    <script>
+        let options = {
+            timeZone:'Europe/London',
+            hour: '2-digit', 
+            minute: '2-digit',            
+            hour12: true,
+        }
+        let britan_time = today.toLocaleTimeString('en-GB',options);
+        console.log(`London Time = ${britan_time.toUpperCase()}`);
+    </script>
+    <script>
+        console.log(`Our Time : ${today.toLocaleTimeString('te-IN',{timeZone:'Asia/Calcutta'})}`) 
+
+        console.log(`${today.toLocaleString('ar-EG')}`)   
+    </script>
+</body>
+</html>

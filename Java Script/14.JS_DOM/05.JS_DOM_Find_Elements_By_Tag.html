@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        section{
+            margin:50px;            
+        }
+        article,input, button{
+            font-size:18px;
+        }
+    </style>
+    <title>DOM</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | DOM | getElementsByTagName()</h2>
+    </nav>
+    <section>
+        <article>
+            <h2>Article-1</h2>
+            <p>HTML Paragraph</p>
+            <p>CSS Paragraph</p>
+            <p>Java Script Paragraph</p>
+            <h3>End of Course List</h3>
+        </article>
+        <article>
+            <p>UI Technologies</p>
+        </article>
+        <article>
+            <button onclick="paragraph_details()">Get Paragraphs</button>
+        </article>
+       </section>
+       <script>
+            let paragraph_details = () => {
+             let paras = document.getElementsByTagName("p");
+             console.log(`No of Paragraphs = ${paras.length}`);
+
+             for(let i=0;i<paras.length;i++)
+             {
+                 let p = paras[i];
+                 console.log(`Paragraph-${i+1} content = ${p.innerText}`);
+                 //to change paragraph content
+                 p.innerText = `Paragraph-${i+1}`
+                 p.style.color='blue'
+                 p.style.fontSize = '30px'
+             }
+            }
+        </script>    
+</body>
+</html>

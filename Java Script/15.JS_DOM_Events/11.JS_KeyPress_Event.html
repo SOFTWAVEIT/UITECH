@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div{
+            margin:50px;
+            font-size:20px;
+        }
+        input{
+            background-color:yellowgreen;
+            padding:5px;
+            border:none;
+            border-radius:5px;
+        }
+    </style>
+    <title>Keyup</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Event | keypress</h2>
+    </nav>
+    <div>
+        Enter Name: 
+        <input type="text" size=30 autofocus id="input_name">       
+    </div>
+    <script>
+        let input_field = document.querySelector('#input_name');    
+
+        input_field.addEventListener('keypress', function(){
+            //console.log(event);
+            //console.log(event.keyCode)
+            let key = event.keyCode //to get ascii value of key pressed
+            if(!((key>=65 && key<=90) || (key>=97 && key<=122) || (key==32)))
+            {
+                event.preventDefault();
+            }
+        })
+    </script>
+</body>
+</html>

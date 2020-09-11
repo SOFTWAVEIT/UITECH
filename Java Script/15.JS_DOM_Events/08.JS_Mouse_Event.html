@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #section-1{            
+            width:550px;
+            height:300px;
+            background-color:teal;
+            border-radius:20px;
+            box-shadow:0 0 10px black;
+            text-align:center;
+            font-size:30px;
+            line-height:180px;
+            color:yellow;
+            margin:100px auto;
+            text-shadow: 0 0 10px white;
+        }
+    </style>
+    <title>Mouse Event</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Event | mousemove</h2>
+    </nav>
+    <div id="section-1">Move on Me</div>
+    <script>
+        let region = document.querySelector('#section-1');
+
+        //to register mouse event with bulb element
+        region.addEventListener('mousemove', function(){
+            //console.log(event.pageX+" - "+event.pageY)
+            region.innerText=`(${event.pageX}, ${event.pageY})`;            
+        })
+
+        region.addEventListener('mouseout', function(){
+            region.innerHTML='Move on Me'
+        })
+    </script>
+</body>
+</html>

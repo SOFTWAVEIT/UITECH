@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Date</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | Date | Methods</h2>
+    </nav>
+    <script>
+        let findDayName = (day) => {
+            let day_name = ''
+            switch (day) {
+                case 0:
+                    day_name = 'SUNDAY';
+                    break;
+                case 1:
+                    day_name = 'MONDAY';
+                    break;
+                case 2:
+                    day_name = 'TUESDAY';
+                    break;
+                case 3:
+                    day_name = 'WEDNESDAY';
+                    break;
+                case 4:
+                    day_name = 'THURSDAY';
+                    break;
+                case 5:
+                    day_name = 'FRIDAY';
+                    break;
+                case 6:
+                    day_name = 'SATURDAY';
+                    break;    
+                default:
+                    day_name = 'INVALID DAY';
+            } //switch
+            return day_name;
+        }//function
+    </script>
+    <script>
+        let today = new Date();
+
+        console.log(`${today}`);
+        console.log(`Year = ${today.getYear()}`);//2020-1900 = 120
+        console.log(`Year = ${today.getFullYear()}`);
+        console.log(`Month = ${today.getMonth()}`);
+        console.log('Date = ' + today.getDate());
+        console.log(`Day = ${today.getDay()}`);
+        console.log(`Day Name = ${findDayName(today.getDay())}`);
+
+        console.log(`Hours = ${today.getHours()}`);
+        console.log(`Minutes = ${today.getMinutes()}`);
+        console.log(`Seconds = ${today.getSeconds()}`);
+        console.log(`Milliseconds = ${today.getMilliseconds()}`);
+        console.log(`Timestamp = ${today.getTime()}`);
+    </script>
+    <script>
+        /* setter methods*/
+        today.setYear(2022);
+        today.setMonth(11);
+        today.setDate(31);
+        today.setHours(11);
+        today.setMinutes(45);
+        today.setSeconds(12);
+        console.log(`${today}`)
+    </script>
+
+    <script>
+        today.setTime(1000);
+        console.log(`${today}`)
+    </script>
+</body>
+
+</html>

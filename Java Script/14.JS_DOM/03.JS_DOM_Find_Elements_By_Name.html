@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        section{
+            margin:50px;            
+        }
+        article,input, button{
+            font-size:18px;
+        }
+    </style>
+    <title>DOM</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | DOM | findElementsByName()</h2>
+    </nav>
+    <section>
+        <article>
+            Gender: 
+            <input type="radio" name="gender" value="Male"> Male 
+            <input type="radio" name="gender" value="Female"> Female 
+            <input type="radio" name="gender" value="TG"> Transgender 
+            <hr>
+            Hobbies 
+            <input type="checkbox" name="hobby" value="Cricket"> Cricket
+            <!--
+            <input type="checkbox" name="hobby" value="Football"> Football
+            -->
+            <input type="checkbox" name="gender" value="Football"> Football
+            <input type="checkbox" name="hobby" value="Chess"> Chess
+            <hr>
+            <button onclick="genderDetails()">Gender Details</button>
+        </article>
+    </section>
+        <script>
+            function genderDetails()
+            {
+             let genders_list = document.getElementsByName("gender");
+             console.log(genders_list);  
+
+             console.log(`No of elements with name "gender" = ${genders_list.length}`) 
+
+             //for iteration
+             for(let element of genders_list)
+             {
+              console.log(`${element.type} : ${element.value}`)  
+
+              if(element.type == 'checkbox') 
+                element.checked = true;
+             }
+            }
+        </script>
+
+</body>
+</html>

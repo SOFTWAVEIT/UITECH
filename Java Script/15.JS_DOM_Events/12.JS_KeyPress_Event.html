@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div{
+            margin:50px;
+            font-size:20px;
+        }
+        input{
+            background-color:yellowgreen;
+            padding:5px;
+            border:none;
+            border-radius:5px;
+        }
+    </style>
+    <title>Keyup</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Event | keypress</h2>
+    </nav>
+    <div>
+        Enter Mobile No: 
+        <input type="text" size=30 autofocus id="input_mobile" maxlength=14>       
+    </div>
+    <script>
+        let input_field = document.querySelector('#input_mobile');    
+
+        input_field.addEventListener('keypress', function(){
+            //ASCII +(43) -(45) space(32) 0(48) 9(57)
+            //console.log(event.keyCode)
+            let key = event.keyCode //to get ascii value of key pressed
+            if(!((key>=48 && key<=57) || (key==43) || (key==45) || (key==32)))
+            {
+                event.preventDefault(); //allows only digits, space, + and - keys
+            }
+        })
+    </script>
+</body>
+</html>

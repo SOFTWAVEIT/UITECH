@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>Date</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Date | Creations</h2>
+    </nav>
+    <script>
+        /*-- using default constructor */
+        let today = new Date();
+        console.log(today);
+        console.log(`Type of "today" = ${typeof today}`);
+
+        /*-- using timestamp */
+        console.log(`No of milliseconds from 1970 Jan Ist = ${today.getTime()}`)
+        //let date1 = new Date(0);
+        let date1 = new Date(10000);
+        console.log(`${date1}`)
+
+        /*-- using constructor with date components --*/
+        let date2 = new Date(2020,0,31,18,27,35);
+        console.log(`${date2}`);
+
+        /* -- using constructor with date in string */
+        //let date3 = new Date('2020-8-25')
+        let date3 = new Date('2020/8/25')        
+        console.log(`${date3}`)                
+    </script>
+</body>
+</html>

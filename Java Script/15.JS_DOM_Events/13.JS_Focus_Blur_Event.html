@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            background-color:teal;
+            color:white;
+        }
+        div{
+            margin:50px;
+            font-size:20px;
+        }
+        input{            
+            padding:5px;
+            border:none;
+            border-radius:5px;
+            outline:none;
+        }
+        #help_text{
+            display:none;
+            font-size:16px;
+            color:blue;
+        }
+    </style>
+    <title>Keyup</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Event | focus & blur</h2>
+    </nav>
+    <div>
+        Enter User Name: 
+        <input type="text" size=20 id="user_name" onfocus="changeSettings()">
+        <span id="help_text">(enter only alphabets)</span>
+    </div>
+    <script>
+        let input_field = document.querySelector('#user_name');
+        let help = document.querySelector('#help_text');
+
+        function changeSettings(text)
+        {
+          input_field.style.backgroundColor='yellow';  
+          input_field.style.boxShadow = '0 0 10px white';
+          help.style.display='inline'
+        }
+    </script>
+    <script>
+        input_field.addEventListener('blur',function(){
+          input_field.style.backgroundColor='white';  
+          input_field.style.boxShadow = 'none';
+          help.style.display='none'            
+        })
+    </script>
+</body>
+</html>

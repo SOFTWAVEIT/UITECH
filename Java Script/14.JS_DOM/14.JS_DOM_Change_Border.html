@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        div{
+            margin:30px;
+        }
+        .container{            
+            width:500px;
+            height:200px;
+            padding:10px;
+            border-radius:20px;
+            box-shadow:0 0 10px black;
+        }
+        button{
+            padding:10px;
+            width:200px;
+            font-size:20px;            
+        }
+    </style>
+    <title>DOM</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | DOM | Create New Heading</h2>
+    </nav>
+
+    <div class="container">
+        <table id="emp_table" width="100%" border=0>
+            <tr>
+                <th>EMP NO</th>
+                <th>NAME</th>
+                <th>SALARY</th>
+            </tr>
+            <tr>
+                <td>101</td>
+                <td>Sunil Joseph</td>
+                <td>2500.50</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>Naveen</td>
+                <td>5500.50</td>
+            </tr>    
+            <tr>
+                <td>103</td>
+                <td>Harsha</td>
+                <td>6500.50</td>
+            </tr>                            
+        </table>        
+    </div>
+    
+    <div>
+        <button onclick="applyBorder()">Apply Border</button>
+    </div>
+
+    <script>
+        function applyBorder()
+        {
+          let emp_table = document.querySelector('#emp_table');
+          if(emp_table != null)
+          {
+            let table_attributes = emp_table.attributes;
+            console.log(`No of Table Attributes = ${table_attributes.length}`)
+
+            for(let attr of table_attributes){
+              console.log(attr)
+             console.log(`${attr.nodeName} : ${attr.nodeValue}`)
+
+             if(attr.nodeName.toLowerCase() == 'border'){
+                 attr.nodeValue = "1"
+             }
+            }
+          }  
+        }
+    </script>
+</body>
+</html>

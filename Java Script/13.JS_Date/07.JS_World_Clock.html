@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <style>
+        body{
+            background:teal;
+            margin:0px;
+        }
+        #header{
+            background:linear-gradient(45deg,darkslategray, darkviolet);
+            color:white;
+            padding:10px;
+        }
+        #header h2{
+            margin:5px 0px;
+        }
+        section{
+            margin:20px;
+            text-align:center;
+        }
+        article{
+            width:300px;
+            height:100px;
+            box-shadow:0 0 10px black;
+            border-radius:15px;
+            display:inline-block;
+            margin-right:50px;
+            color:white;
+            text-align:center;
+            line-height:2;
+            font-size:22px;
+            text-shadow:0 0 10px yellow;
+            font-weight:bold;
+        }
+        #delhi{
+            background:linear-gradient(45deg,black,orangered);
+        }
+        #new_york{
+            background:linear-gradient(45deg,black,darkred);
+        }
+        #london{
+            background:linear-gradient(45deg,black,darkblue);
+        }
+        #sydney{
+            background:linear-gradient(45deg,black,limegreen);
+        }
+    </style>
+    <title>World Clock</title>
+</head>
+<body onload="showTimes()">
+    <nav id="header">
+        <h2>Java Script | World Clock</h2>
+    </nav>
+    <section>
+        <article id="delhi"></article>
+        <article id="new_york"></article>
+        <article id="london"></article>
+        <article id="sydney"></article>
+    </section>
+
+    <script>
+        let delhi = document.getElementById('delhi');
+        let new_york = document.getElementById('new_york');
+        let london = document.getElementById('london');
+        let sydney = document.getElementById('sydney');
+
+        function showTimes(){
+            let today = new Date();
+
+            let delhi_time = 'DELHI<br>'+today.toLocaleTimeString('te-IN',{timeZone:'Asia/Calcutta',hour12:true});
+
+            let new_york_time = 'NEW YORK<br>'+today.toLocaleTimeString('en-US',{timeZone:'America/New_York'});
+
+            let london_time = 'LONDON<br>'+today.toLocaleTimeString('en-GB',{timeZone:'Europe/London',hour12:true});
+
+            let sydney_time = 'SYDNEY<br>'+today.toLocaleTimeString('en-AU',{timeZone:'Australia/Sydney'});
+
+            delhi.innerHTML = delhi_time;
+            new_york.innerHTML = new_york_time;
+            london.innerHTML = london_time.toUpperCase();
+            sydney.innerHTML = sydney_time.toUpperCase();
+        }
+
+        setInterval(showTimes, 1000)
+    </script>
+
+</body>
+</html>

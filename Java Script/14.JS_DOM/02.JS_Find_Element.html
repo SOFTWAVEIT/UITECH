@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        section{
+            margin:50px;            
+        }
+        article,input, button{
+            font-size:18px;
+        }
+    </style>
+    <title>DOM</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | DOM | findElementById()</h2>
+    </nav>
+    <section>
+        <article>
+            Enter Name: 
+            <input type="text" id="txtName" size="20" autofocus>
+            <button onclick="showMessage()">Welcome</button>
+        </article>
+    </section>
+        <script>
+            let showMessage = () => {
+                //get reference of text field
+                let input_field = document.getElementById('txtName');
+                //console.log(input_field);
+                if(input_field != null)
+                {
+                 //get value of text field
+                 let txt_name = input_field.value.trim();   
+
+                 if(txt_name.length == 0)
+                   alert('Welcome, Guest');
+                 else
+                   alert('Welcome, '+txt_name)  
+
+                 input_field.focus();   
+                }
+                else
+                {
+                 console.log('the specified text field is not in web page')   
+                }
+            }
+        </script>
+</body>
+</html>

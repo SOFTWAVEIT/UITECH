@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin:0px;            
+        }
+        #header{
+            background:linear-gradient(45deg,black 50%,orangered 50%);
+            padding:10px;
+            color:white;
+        }
+        #header h2{
+            margin:5px 0px;
+        }
+    </style>
+    <title>Strings</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | String | Methods</h2>
+    </nav>
+    <script>
+        let str = "JavaScript is a scripting language. Scripting languages are often interpreted";     
+
+        console.log(`indexOf('scripting') = ${str.indexOf('scripting')}`);
+        console.log(`search('scripting') = ${str.search('scripting')}`);
+
+        console.log(`indexOf('Scripting') = ${str.indexOf('Scripting')}`);
+        console.log(`search('Scripting') = ${str.search('Scripting')}`);        
+
+        let exp = /Scripting/;
+        console.log(`search(/Scripting/) = ${str.search(exp)}`);
+
+        exp = /Scripting/i;
+        console.log(`search(/Scripting/i) = ${str.search(exp)}`);
+    </script>
+    <script>
+        str="Learn Node.js at Softwave IT. Node.js is a well-known JavaScript framework.";
+        console.log(str);
+
+        let str1 = str.replace('Node.js','Angular');
+        console.log(str1);
+
+        //let str2 = str.replace(/node.js/,'Angular')
+        //let str2 = str.replace(/node.js/i,'Angular')
+        let str2 = str.replace(/node.js/ig,'Angular')
+        console.log(str2)
+    </script>
+</body>
+</html>

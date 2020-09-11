@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        div{
+            margin:40px;
+            font-size:20px;
+        }
+        select,p{
+            font-size:20px;
+        }
+        p{
+            text-align:center;
+            color:blue;
+        }
+        #canvas{
+            width:700px;
+            height:200px;
+            border-radius:10px;
+            box-shadow:0 0 10px black;
+            background-color:black;
+        }
+        button{
+            width:100px;
+            background-color:gray;
+        }
+        button:hover{
+            background:linear-gradient(gray,gray);
+        }
+    </style>
+    <title>change event</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Event | change</h2>
+    </nav>
+    <div>
+        Select Country Name
+        <select id="country_name_field" onchange="getStates(this)">
+            <option value="">select a country name</option>
+            <option value="IND">India</option>
+            <option>America</option>
+            <option>England</option>
+            <option>Australia</option>
+            <option>Poland</option>
+            <option>Italy</option>
+            <option>Japan</option>
+        </select>
+        <p id="state_names">Select a Country</p>
+    </div>
+    <hr>
+    <div>
+        Apply Background Color: 
+        <select id="bgcolor_field">
+            <option value="black">select a color for background</option>
+            <option>red</option>
+            <option>green</option>
+            <option>blue</option>
+            <option>yellow</option>
+            <option>orangered</option>
+            <option>darkviolet</option>
+            <option>darkred</option>
+        </select>
+        <div id="canvas"></div>
+    </div>
+    <hr>
+    <!-- enable or disable a button based on a checkbox selection-->
+    <div style="padding:10px;background-color:teal">
+        <input type="checkbox" onchange="installOrNot(this)">I Accept the Licence Agreement! 
+        <button onclick="alert('Installation is Happening!')" disabled="disabled" id="installButton">Install</button>
+    </div>
+    <hr>
+    <!-- to show the print dialog-->
+    <button onclick="window.print()">Print</button>
+
+    <script>
+        let state_field = document.querySelector('#state_names');
+        function getStates(element)
+        {
+          let country_name = element.value;            
+          if(country_name.length>0)          
+            state_field.innerText = `States in ${country_name}` 
+          else
+            state_field.innerText = `Select a Country` 
+        }
+    </script>
+    <!-- script for applying background color-->
+    <script>
+        let bgcolor_field = document.querySelector('#bgcolor_field');
+        let canvas = document.querySelector('#canvas'); 
+        bgcolor_field.addEventListener('change', function(){
+            canvas.style.backgroundColor = bgcolor_field.value;
+        })
+    </script>
+
+    <!--script for enabling a button-->
+    <script>
+        let installButton = document.querySelector('#installButton');
+        let installOrNot = (cbox) => {
+           if(cbox.checked)
+             installButton.disabled = '' //to enable the button
+           else
+             installButton.disabled = 'disabled' //to disable a button
+        }
+    </script>
+</body>
+</html>

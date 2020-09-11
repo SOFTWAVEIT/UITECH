@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        div{
+            margin:30px;
+        }
+        .container{            
+            width:500px;
+            height:200px;
+            padding:10px;
+            border-radius:20px;
+            box-shadow:0 0 10px black;
+        }
+        button{
+            padding:10px;
+            width:200px;
+            font-size:20px;            
+        }
+    </style>
+    <title>DOM</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | DOM | Create New Heading</h2>
+    </nav>
+
+    <div class="container"></div>
+    
+    <div>
+        <button onclick="createNewHeading()">Add New Heading</button>
+    </div>
+
+    <script>
+        function createNewHeading()
+        {
+         //create a new h2 element   
+         let head_2 = document.createElement('h2');
+         //create a text
+         let head_2_text = document.createTextNode('Softwave IT');
+         //append the text with element node
+         head_2.appendChild(head_2_text);  
+
+         //get refernce of parent element
+         let parent_div = document.querySelector('.container');
+         //append head_2 in parent
+         parent_div.appendChild(head_2); 
+        }
+    </script>
+</body>
+</html>

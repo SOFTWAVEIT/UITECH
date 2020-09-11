@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        button{
+            padding:2px;
+            width:140px;
+        }
+        select{
+            font-size:20px;
+            padding:5px;
+        }
+    </style>
+    <title>Option Dynamically</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | option dynamically</h2>
+    </nav>
+
+    <section>
+        <article>
+            Enter a Course Name: 
+            <input type="text" size=20 id="input_course">
+            <button>Add Course</button>
+        </article>
+        <article style="margin-top:40px;">
+            Select a Course Name: 
+            <select name="course_names" id="course_names">
+                <option value="">select a course name</option>
+            </select>
+        </article>
+    </section>
+    <script>
+        let input_course = document.querySelector('#input_course');
+        let course_names = document.querySelector('#course_names');
+
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', function(){
+            let txt = input_course.value.trim();
+            if(txt.length>0){
+                let opt = new Option(txt,txt);
+                //console.log(opt)
+                course_names[course_names.length] = opt;
+                input_course.value = ''                
+            }
+            else{
+                alert('Please enter a course name')
+            }
+            input_course.focus();
+        })
+    </script>
+</body>
+</html>
