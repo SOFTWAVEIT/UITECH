@@ -12,25 +12,37 @@
     </nav>
     <section>
         <article>
-            <button>ALL EMPLOYEES</button>
-            <button>MALE EMPLOYEES</button>
-            <button>FEMALE EMPLOYEES</button>
+            <button onclick="showAllEmployees()">ALL EMPLOYEES</button>
+            <button onclick="showMaleEmployees()">MALE EMPLOYEES</button>
+            <button onclick="showFemaleEmployees()">FEMALE EMPLOYEES</button>
+        </article>
+        <article>
+            <p>
+                Search Employees with First Name: 
+                <input type="text" size=15 onkeyup="getEmployees(this.value)">
+            </p>
+        </article>
+        <article>
+            <p>No of Records : 
+            <span id="no_of_records">________</span>
+            </p>
         </article>
         <article>
             <table id="table_employees">
                 <thead>
-                    <th>SL NO</th>
-                    <th>EMP NO</th>
-                    <th>FIRST NAME</th>
-                    <th>LAST NAME</th>
+                    <th width="10%">SL NO</th>
+                    <th width="10%">EMP NO</th>
+                    <th width="20%">FIRST NAME</th>
+                    <th width="20%">LAST NAME</th>
                     <th>GENDER</th>
-                    <th>AGE</th>
-                    <th>COUNTRY</th>
+                    <th width="10%">AGE</th>
+                    <th width="20%">COUNTRY</th>
                 </thead>
                 <tbody id="table_body"></tbody>
             </table>
         </article>
-
     </section>
+    <script src="employees.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

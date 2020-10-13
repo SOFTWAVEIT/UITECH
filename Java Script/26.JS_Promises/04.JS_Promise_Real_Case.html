@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table {
+            width: 70%;
+            margin: 50px auto;
+            border-collapse: collapse;
+            font-size: 20px;
+            ;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        tr {
+            height: 45px;
+        }
+    </style>
+    <title>Promise</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | Promise | Basics</h2>
+    </nav>
+    <table>
+        <thead>
+            <tr>
+                <th style="width:25%">A/C No</th>
+                <th>Name</th>
+                <th style="width:25%">Balance</th>
+            </tr>
+        </thead>
+        <tbody id="accounts-body"></tbody>
+    </table>
+    <script>
+       let accounts = [
+            {acno:1000123,name:'Sunil Joseph',bal:25000},
+            {acno:1000124,name:'Harsha Vardhan',bal:25500}
+        ]
+
+        let addAccount = function(account){
+          return new Promise((resolve,reject)=>{  
+            setTimeout(()=>{
+                let no_of_accounts = accounts.length;
+                console.log('Existing Accounts = '+ no_of_accounts)
+
+                let n=accounts.push(account) //to add a entry to array at the end  
+
+                console.log('Latest no of Accounts = '+n) 
+
+                if(n > no_of_accounts)
+                 resolve('Inserted')
+                else
+                 reject('Operation Failed')             
+            },8000)            
+        })
+        }        
+
+        let displayAccounts = ()=>{
+            let acRows = ''
+            for(let acc of accounts){
+                acRows += `<tr>
+                 <td align=center>${acc.acno}</td>
+                 <td>${acc.name}</td>
+                 <td align=center>${acc.bal}</td>
+                `
+            }
+            document.querySelector('#accounts-body').innerHTML = acRows
+        }
+
+        displayAccounts()
+
+        let new_ac = {acno:1000125,name:'Naveen',bal:50000}
+
+        let promise = addAccount(new_ac);
+        promise.then(function(msg){
+            console.log(msg);
+            displayAccounts();
+        }).catch(function(err){
+            console.log(err)
+        })
+    </script>
+</body>
+
+</html>

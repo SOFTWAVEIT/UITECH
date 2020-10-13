@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <h2>Java Script | Class | Static Members</h2>
+    </nav>
+    <section></section>
+    <script>
+        class Point{
+            constructor(x, y){
+                this.x = x;
+                this.y = y;
+            }
+
+            getCoordinates(){
+                console.log(`(${this.x}, ${this.y})`);
+            }
+
+            static distanceBetween(p1, p2){
+                let xDiff = Math.abs(p2.x-p1.x);
+                let yDiff = Math.abs(p2.y-p1.y);
+                let dPoint = new Point(xDiff,yDiff);
+                return dPoint;
+            }
+        }
+    </script>
+    <script>
+        let startPoint = new Point(5,7);
+        let endPoint = new Point(25,7);
+
+        startPoint.getCoordinates();
+        endPoint.getCoordinates();
+        
+        let differencePoint = Point.distanceBetween(startPoint, endPoint);
+        differencePoint.getCoordinates();
+    </script>
+</body>
+</html>

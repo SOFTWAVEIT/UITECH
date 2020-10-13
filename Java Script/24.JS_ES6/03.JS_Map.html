@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Map</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Map</h2>
+    </nav>
+    <script>
+        let employees = new Map();
+
+        employees.set(101,'Sunil Joseph');
+        employees.set(102,'Harsha Vardhan');
+        employees.set(103,'Vamsi Krishna');
+        employees.set(104,'Naveen');
+        employees.set(105,'Praveen Kumar')
+        employees.set(105,'Charles Winn');
+
+        console.log(employees);
+
+        console.log(`No of Employees = ${employees.size}`)
+
+        console.log(`Is employee with id 104 exists in map = ${employees.has(104)}`)
+
+        if(employees.has(104)){
+            let emp_name = employees.get(104);
+            console.log(`104 -> ${emp_name}`);
+        }
+        else{
+            console.log(`No employee with ID = 104`);
+        }
+        /*--- to get the keys from Map ---*/
+        let empnos = employees.keys();
+        let emp_keys = `Employee Numbers: `
+        for(let eno of empnos){
+            emp_keys=`${emp_keys}${eno} | `
+        }
+        console.log(emp_keys);
+
+        /*---- to get the values from Map ---*/
+        let names = employees.values();
+        let emp_names = 'Employee Names: ';
+        for(let name of names){
+            emp_names += `${name} | `
+        }
+        console.log(emp_names);
+
+        /*--- to get entries from Map ---*/
+        let entries = employees.entries();
+        for(let [empno,name] of entries){
+            console.log(`${empno} : ${name}`)
+        }
+
+        /*--- to delete an entry nased on key ---*/
+        console.log(employees.delete(101)) //true
+        console.log(`No of Employees = ${employees.size}`) 
+        console.log(employees) 
+        
+        console.log(`--------------------------`)
+        let newMap = new Map();
+        newMap.set('name', 'Sunil'); 
+        newMap.set('age', 38);
+        newMap.set('interest', ['Java', 'Android', 'Python']);
+
+        console.log(newMap.get('name')); //Sunil
+        console.log(newMap.get('age')); // 38
+        console.log(newMap.get('interest'));  
+    </script>
+
+</body>
+</html>

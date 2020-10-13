@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #url_details{
+            font-size:23px;
+            color:blue;
+        }
+    </style>
+    <title>History</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | history object</h2>
+    </nav>
+    <section>
+        <article>
+            <button onclick="getDetails()">History Details</button>            
+            <button onclick="backFun()">&larr;</button>            
+            <button onclick="forwardFun()">&rarr;</button>            
+        </article>
+        <article>
+            <p id="url_details"></p>
+        </article>
+    </section>
+
+    <script>
+        let url_details = document.querySelector('#url_details');
+
+        let getDetails = ()=>{
+            let total_pages_visited = window.history.length;
+            url_details.innerText = `No of Pages in History = ${total_pages_visited}`
+
+           console.log(window.history)
+        }
+
+        let backFun = ()=>{
+            //history.back()
+            history.go(-2);
+        }
+
+        let forwardFun = ()=>{
+            history.forward();
+        }
+    </script>
+</body>
+</html>

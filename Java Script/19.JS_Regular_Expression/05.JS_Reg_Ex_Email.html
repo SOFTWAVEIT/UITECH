@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #result{
+            font-size:18px;
+            color:blue;
+            width:300px;
+            text-align:center;
+        }
+        button{
+            width:80px;
+            padding:3px;
+            font-size:17px;
+        }
+    </style>
+    <title>Regular Expression</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Regular Expression - 06 | Email</h2>
+    </nav>
+    <section>
+        <article>
+            <p>Data Should be a Valid Email Address</p>
+            <hr>
+            Enter Email 
+            <input type="text" id="email-field" size=20 autofocus>
+            <button>OK</button>
+            <p id=result></p>
+        </article>
+    </section>
+
+    <script>
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', function(){
+           let result_region = document.querySelector('#result');
+           //get username value from field 
+           let email = document.querySelector('#email-field').value 
+
+           let pattern = /^([a-z0-9]+)@([a-z]+)\.([a-z]{2,3})(\.([a-z]{2}))?$/
+
+           if(pattern.test(email)){
+               result_region.innerText = 'Valid Email';
+               result_region.style.color = 'green'
+           }
+           else{
+               result_region.innerText = 'Invalid Email';
+               result_region.style.color = 'red'
+           }
+        })
+    </script>
+</body>
+</html>

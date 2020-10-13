@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Callbacks</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | Callbacks</h2>        
+    </nav>
+    <section>
+        <article>
+            <p id="result">??</p>
+        </article>
+    </section>
+    <script>
+        let name='Guest';
+
+        function greetings(nam){
+            document.querySelector('#result').innerText='Welcome, '+nam
+        }
+        
+        function processInput(callback){
+            //name=prompt('enter name: ',"");    
+            setTimeout(function(){
+                name=prompt('enter name',"")
+                callback(name);     
+                },2000);                       
+        }
+
+        processInput(greetings);        
+    </script>        
+</body>
+
+</html>

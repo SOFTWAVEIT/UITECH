@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #result{
+            font-size:18px;
+            color:blue;
+            width:300px;
+            text-align:center;
+        }
+        button{
+            width:80px;
+            padding:3px;
+            font-size:17px;
+        }
+    </style>
+    <title>Regular Expression</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Regular Expression - 02 | User Name</h2>
+    </nav>
+    <section>
+        <article>
+            <p>Data Should have either "simple", "dimple","pimple"</p>
+            <hr>
+            Enter Data
+            <input type="text" id="data-field" size=20 autofocus>
+            <button>OK</button>
+            <p id=result></p>
+        </article>
+    </section>
+
+    <script>
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', function(){
+           let result_region = document.querySelector('#result');
+           //get username value from field 
+           let data = document.querySelector('#data-field').value 
+
+           //let pattern = /[sdp]imple/;
+           //let pattern = /[^sdp]imple/;
+           //let pattern = /^[sdp]imple$/i;
+           let pattern = new RegExp('^[sdp]imple$','i');
+
+           if(pattern.test(data)){
+               result_region.innerText = 'Valid Data';
+               result_region.style.color = 'green'
+           }
+           else{
+               result_region.innerText = 'Invalid Data';
+               result_region.style.color = 'red'
+           }
+        })
+    </script>
+</body>
+</html>

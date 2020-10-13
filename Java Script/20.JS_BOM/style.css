@@ -1,0 +1,25 @@
+body{
+    margin:0px;
+}
+#header{
+    background: linear-gradient(45deg,black, orangered);
+    color:white;
+    padding:10px;
+}
+#header h2{
+    margin:0px;
+}
+section{
+ margin:30px;     
+}
+article{
+    margin-top:20px;
+}
+input, article, button{
+    font-size:20px
+}
+button{
+ padding:6px;
+ width:180px;
+ border-radius:15px;
+}

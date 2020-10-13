@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        #header {
+            background-color: lightgreen;
+            padding: 15px;
+        }
+
+        #header h2 {
+            margin: 0px;
+        }
+    </style>
+    <title>OOPS-1</title>
+</head>
+
+<body>
+    <div id="header">
+        <h2>Java Script | OOPS | Class & Objects</h2>
+    </div>
+
+    <script>
+        
+        /*
+        //class definition
+        class Account {
+            constructor(acno,name,amt) {
+                console.log(`------ Inside constructor`)
+                this.acno = acno;
+                this.name = name;
+                this.bal = amt;
+            }
+        }        
+        */
+
+        //class expression
+        let Account = class{
+            constructor(acno,name,amt) {
+                console.log(`------ Inside constructor`)
+                this.acno = acno;
+                this.name = name;
+                this.bal = amt;
+            }            
+        }
+    </script>
+    <script>
+        console.log(`Name = ${Account.name}`)        
+        console.log('Type of Account = '+ typeof(Account)) //function
+
+        //creating object of Account
+        let acc1 = new Account(10001234,'Sunil',25000);
+        console.log(acc1)
+        console.log(typeof(acc1)) //object
+        console.log(acc1 instanceof Account);//true
+
+        let acc2 = new Account(10001235,'Anil',35000);
+        let acc3 = new Account(10001236,'Sachin',45000);
+        console.log(acc2);
+        console.log(acc3)
+    </script>
+    <script>
+        console.log(`------------------------------`)
+        //accessing the properties of an object with reference
+        console.log(`A/C No: ${acc1.acno} | Name: ${acc1.name} | Balance: ${acc1['bal']}`);
+
+        console.log(`------------------------------`)
+        //accessing the properties of an object using for...in loop
+        for(let prop in acc2){
+            console.log(`${prop.toUpperCase()}: ${acc2[prop]}`)
+        }
+
+        console.log(`------------------------------`)
+
+        console.log(acc3);
+        acc3.bal = acc3.bal + 1500
+        console.log(acc3);
+        //adding a non-existing property of a class to an object
+        acc3.branch = 'Ameerpet';
+        console.log(acc3); 
+    </script>
+</body>
+
+</html>

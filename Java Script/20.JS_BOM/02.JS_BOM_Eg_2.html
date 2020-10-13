@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BOM-1</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Browser Object Model</h2>
+    </nav>
+    <section>
+        <article>
+            <button onclick="showWindow()">Open Window</button>
+            <button onclick="hideWindow()">Close Window</button>
+        </article>
+    </section>
+    <script>
+        let winHandle;
+
+        let showWindow = () =>{
+            winHandle = window.open('../18.JS_Validations/04.JS_Registration_Form.html','','width=700px,height=500px,top=200px,left=350px,scrollbars=false');            
+        }
+
+        /*function to close window*/
+        let hideWindow = () =>{
+           if(winHandle != null) 
+            winHandle.close()
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BOM-1</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Browser Object Model</h2>
+    </nav>
+    <section>
+        <article>
+            <button onclick="openBrowsers()">Open Google & Hotmail</button>
+        </article>
+    </section>
+    <script>
+        function openBrowsers(){
+            let google = window.open('https://www.google.com','','width=600px,height=500px,top=200px,left=10px')
+
+            let hotmail = window.open('https://www.hotmail.com','','width=700px,height=500px,top=200px,left=650px')
+        }
+    </script>
+</body>
+</html>

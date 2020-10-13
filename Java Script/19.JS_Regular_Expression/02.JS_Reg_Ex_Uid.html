@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #result{
+            font-size:18px;
+            color:blue;
+            width:300px;
+            text-align:center;
+        }
+        button{
+            width:80px;
+            padding:3px;
+            font-size:17px;
+        }
+    </style>
+    <title>Regular Expression</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Regular Expression - 02 | User Name</h2>
+    </nav>
+    <section>
+        <article>
+            <p>User Name Should have "SIT"</p>
+            <hr>
+            Enter User Name
+            <input type="text" id="username-field" size=20 autofocus>
+            <button>OK</button>
+            <p id=result></p>
+        </article>
+    </section>
+
+    <script>
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', function(){
+           let result_region = document.querySelector('#result');
+           //get username value from field 
+           let uid = document.querySelector('#username-field').value 
+
+           //let uid_pattern = /SIT/
+           //let uid_pattern = /SIT/i
+
+           //let uid_pattern = new RegExp('SIT')
+           let uid_pattern = new RegExp('SIT','i')
+
+           let uid_message = 'Invalid User Name';
+           result_region.style.color = 'red'
+
+           if(uid_pattern.test(uid)){
+             uid_message = 'Valid User Name'
+             result_region.style.color = 'green'
+           }
+           result_region.innerHTML = uid_message;  
+        })
+    </script>
+</body>
+</html>

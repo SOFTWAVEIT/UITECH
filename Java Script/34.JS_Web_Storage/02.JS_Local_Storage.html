@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>localStorage</title>
+</head>
+<body>
+    <nav>
+        <h2>Java Script / HTML | Web Storage | localStorage</h2>
+    </nav>
+    <section>
+        <article>
+            <button>Show Data</button>
+        </article>
+        <article>
+            <p id="details"></p>
+        </article>
+    </section>
+    <script>
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function(){
+            let name = localStorage.getItem("name")
+            let addr = localStorage.getItem("address")
+            document.querySelector('#details').innerHTML = `Name: ${name}<br>Address: ${addr}`
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>getter & setter</title>
+</head>
+<body>
+    <nav>
+        <h2>Java Script | Class | Getters & Setters</h2>
+    </nav>
+    <section></section>
+    <script type="text/javascript">
+        class Person{
+            constructor(fname, lname){
+                this.firstName = fname;
+                this.lastName = lname;
+            }
+            //getter method for firstName
+            get FirstName(){
+                console.log(`inside getter method of firstName`);
+                return this.firstName;
+            }
+            //getter method for lastName
+            get LastName(){
+                console.log(`inside getter method of lastName`);
+                return this.lastName;
+            }            
+
+            //setter method for firstName
+            set FirstName(fn){
+                console.log(`inside setter method of firstName`);
+                this.firstName = fn;
+            }
+            //setter method for lastName
+            set LastName(ln){
+                console.log(`inside setter method of lastName`);
+                this.lastName = ln;
+            }            
+
+            fullName(){
+                return `${this.firstName} ${this.lastName}`
+            }
+        }
+    </script>
+    <script>
+        let person1 = new Person('Ramesh','Krishna');
+        console.log(person1.fullName())
+        //console.log(`${person1.firstName} ${person1.lastName}`)
+
+        console.log(person1.FirstName+' '+person1.LastName)
+
+        person1.FirstName = 'Ram';
+        console.log(person1.FirstName+' '+person1.LastName)
+    </script>
+</body>
+</html>

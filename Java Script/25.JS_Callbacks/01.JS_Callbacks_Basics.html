@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Callbacks</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | Callbacks</h2>
+    </nav>
+    <section>
+        <button id="btn">Click Me</button>
+    </section>
+    <script>
+        let btn = document.querySelector('#btn')
+        /*
+        btn.addEventListener('click', btnAction);
+
+        function btnAction(){
+            alert('Clicked on Button');
+        }
+        */
+
+        btn.addEventListener('click', function(){            
+            setTimeout(function(){alert('Welcome')},3000)
+            console.log('Button Clicked')
+        })
+    </script>
+    <script>
+        let data = [1,2,3,4,5,6,7,8,9,10];
+        let oddNumbers = data.filter(checkEven);
+
+        function checkEven(num){
+            return num%2==1
+        }
+        console.log(oddNumbers)
+    </script>
+    <script>        
+        let evenNumbers = data.filter(function(num){
+            return num%2==0
+        });
+
+        console.log(evenNumbers)
+    </script>  
+    <script>        
+        evenNumbers = data.filter((num)=>num%2==0);
+
+        console.log(evenNumbers)
+    </script>        
+</body>
+
+</html>

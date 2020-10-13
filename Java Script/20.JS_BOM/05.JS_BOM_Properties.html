@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #details{
+            font-size:22px;
+            text-align:center;
+            line-height:2;
+            font-weight:bolder;
+        }
+    </style>
+    <title>BOM-1</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Browser Object Model</h2>
+    </nav>
+    <section>
+        <article>
+            <p id="details">????</p>
+        </article>
+    </section>
+    <script>
+        window.addEventListener('resize', function()
+        {
+            let data = `Inner Width = ${window.innerWidth}<br>
+            Inner Height = ${window.innerHeight}<br>
+            Outer Width = ${window.outerWidth}<br>
+            Outer Height = ${window.outerHeight}
+            `
+            document.querySelector('#details').innerHTML = data;
+        })
+    </script>
+</body>
+</html>

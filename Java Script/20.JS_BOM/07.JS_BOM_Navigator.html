@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #details{
+            font-size:23px;
+            color:blue;
+            line-height:2
+        }
+    </style>
+    <title>Navigator</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | navigator object</h2>
+    </nav>
+    <section>
+        <article>
+            <button onclick="getDetails()">Details</button>                           
+        </article>
+        <article>
+            <p id="details"></p>
+        </article>
+    </section>
+
+    <script>
+        let details = document.querySelector('#details');
+
+        let getDetails = ()=>{
+           let data = `App Code Name : ${navigator.appCodeName}<br>
+           App Name: ${navigator.appName}<br>
+           App Version: ${navigator.appVersion}<br>
+           Cookie Enabled : ${navigator.cookieEnabled}<br>
+           Language: ${navigator.language}<br>
+           User Agent: ${navigator.userAgent}<br>
+           Platform: ${navigator.platform}<br>`
+
+           details.innerHTML = data;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table{
+            width:350px;
+            padding:10px;
+            background:linear-gradient(45deg,black,rgb(95, 10, 27));
+            color:white;
+            font-size:18px;
+            margin:auto;
+            border-radius:10px;
+            box-shadow:0 0 10px black;
+        }
+        tr{
+            height:45px;
+        }
+        input{
+            font-size:18px;
+        }
+    </style>
+    <title>Login Form</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Login Form</h2>
+    </nav>
+    <section>
+        <article>
+            <form action="login.jsp" onsubmit="return validateData()">
+                <table>
+                    <tr>
+                        <td>User Name</td>
+                        <td><input type="text" name="uid_field" id="txtUid" size=20 autofocus></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" name="pwd_field" id=txtPwd size=20></td>
+                    </tr>
+                    <tr>
+                        <td colspan=2 align=center>
+                            <input type="submit" value="L o g i n">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </article>
+    </section>
+
+    <script>
+        function validateData(){
+            let txtUid = document.querySelector('#txtUid');
+            let txtPwd = document.querySelector('#txtPwd');
+
+            //get form data
+            let uid = txtUid.value.trim();
+            let pwd = txtPwd.value.trim();
+
+            if(uid.length<5){
+                alert('Error:\nUsername should be min 5 chars');
+                txtUid.style.border="1px solid red";
+                txtUid.focus();
+                return false;
+            }
+            else{
+                txtUid.style.border="1px solid green";
+            }
+            if(pwd.length<=0){
+                alert('Error:\nPassword should be entered')
+                txtPwd.style.border='1px solid red'
+                txtPwd.focus();
+                return false;
+            }
+            else{
+                txtPwd.style.border="1px solid green";
+            }
+        }
+    </script>
+</body>
+</html>

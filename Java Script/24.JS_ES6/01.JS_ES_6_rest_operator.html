@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>ES6 | rest</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | ES6 | rest operator</h2>
+    </nav>
+
+    <script>
+        function sum(...data){
+            let s=0;
+            //console.log(typeof(data))
+            //console.log(data)
+            for(let x of data){
+                s += x;
+            }
+            console.log(`Sum = ${s}`)
+        }
+    </script>
+    <script>
+        sum(1,2);
+        sum(1,2,3);
+        sum();
+        sum(10,20,30,40,50)
+    </script>
+
+    <script>
+        function displayNames(...names){
+            names.sort()
+            for(let index in names){
+                console.log(names[index]);
+            }
+        }
+    </script>
+    <script>
+        displayNames('Anil','Ram','Ravi','Madhav','Rabindra','Gaurav','Shuhaib','Shoel','Amol');
+    </script>
+</body>
+</html>

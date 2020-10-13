@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>checkValidity</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Check Validity</h2>
+    </nav>
+    <section>
+        <article>
+            Enter Daily Wage: 
+            <input type="number" id="wage_field" size=15 min=300 max=900 step="5" autofocus>
+            <span id="wage_error" style="font-size:16px;color:red"></span>
+        </article>
+    </section>
+    <script>
+        let wage_field = document.querySelector('#wage_field');
+        let wage_error = document.querySelector('#wage_error');
+
+        wage_field.addEventListener('blur', function(){
+           // alert('Valid = '+wage_field.validity.valid+"\nOverflow = "+wage_field.validity.rangeOverflow)
+
+           if(wage_field.validity.valid){
+               wage_error.innerText = 'Wage is Valid';
+           }
+           else if(wage_field.validity.rangeUnderflow){
+               wage_error.innerText = 'Wage is Less';
+           }
+           else if(wage_field.validity.rangeOverflow){
+               wage_error.innerText = 'Wage is Higher';
+           }           
+           else if(wage_field.validity.stepMismatch){
+               wage_error.innerText = 'Not an approved amount in range';
+           }
+        })
+    </script>
+</body>
+</html>   

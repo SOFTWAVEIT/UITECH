@@ -1,0 +1,33 @@
+body{
+    margin:0px;
+}
+nav{
+    background: linear-gradient(45deg,black, orangered);
+    color:white;
+    padding:10px;
+}
+h2{
+    margin:10px 0px
+}
+section{
+    width:50%;
+    margin:50px auto;
+}
+article{
+    margin-top:30px;
+}
+section article{
+    font-size:20px;
+    line-height:2;
+    text-align:center
+}
+input,button{
+    font-size:20px
+}
+button{
+    padding:5px 30px;
+    border-radius:15px;
+    border:none;
+    background-color:black;
+    color:white;    
+}

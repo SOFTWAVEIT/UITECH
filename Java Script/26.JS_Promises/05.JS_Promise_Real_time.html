@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        table {
+            margin: 40px auto;
+            width: 60%;
+            font-size: 20px;
+            border-collapse: collapse;
+        }
+
+        tr {
+            height: 50px;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+        }
+    </style>
+    <title>employees</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | Promise | Real Time Usecase</h2>
+    </nav>
+    <table>
+        <thead>
+            <tr>
+                <th style="width:20%">EMP NO</th>
+                <th>NAME</th>
+                <th style="width:25%">SALARY</th>
+            </tr>
+        </thead>
+        <tbody id="table_body"> </tbody>
+    </table>
+
+    <script>
+        let employees = [
+            { empno: 101, name: 'Sunil Joseph', sal: 2500 },
+            { empno: 102, name: 'Harsha Vardhan', sal: 3500}
+        ]
+    </script>
+    <script>
+        function displayEmployees() {
+            let table_body_data = ''
+
+            for (let emp of employees) {
+                table_body_data += `<tr>
+                 <td>${emp.empno}</td>
+                 <td>${emp.name}</td>
+                 <td>${emp.sal}</td>
+                </tr> `
+            }//for
+            document.querySelector('#table_body').innerHTML = table_body_data
+        }        
+    </script>
+    <script>
+        function addEmployee(emp){
+            return new Promise(function(resolve,reject){
+            setTimeout(() => {
+                employees.push(emp);                   
+                resolve();               
+            }, 3000)
+        })
+        };
+    </script>
+    <script>        
+        let new_emp = {empno:103,name:'Naveen',sal:4500};
+        addEmployee(new_emp).then(function(){
+            displayEmployees()
+        })
+       
+        displayEmployees();
+    </script>
+</body>
+
+</html>

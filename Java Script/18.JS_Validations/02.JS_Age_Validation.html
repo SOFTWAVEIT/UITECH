@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table{
+            width:550px;
+            padding:10px;
+            background:linear-gradient(45deg,black,rgb(95, 10, 27));
+            color:white;
+            font-size:18px;
+            margin:auto;
+            border-radius:10px;
+            box-shadow:0 0 10px black;
+        }
+        tr{
+            height:45px;
+        }
+        input{
+            font-size:18px;
+        }
+        #ageErr{
+            font-size:15px;
+            color:yellow;
+        }
+    </style>
+    <title>Login Form</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Age Validation</h2>
+    </nav>
+    <section>
+        <article>
+            <form action="register.jsp" onsubmit="return validateData()">
+                <table>
+                    <tr>
+                        <td>Age</td>
+                        <td width="85%"><input type="text" name="age_field" id="txtAge" size=20 autofocus>
+                        <span id="ageErr"></span>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan=2 align=center>
+                            <input type="submit" value="R e g i s t e r">                            
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </article>
+    </section>
+
+    <script>
+        function validateData(){
+            let txtAge = document.querySelector('#txtAge');
+            let ageErr = document.querySelector('#ageErr');
+
+            //get form data
+            let age = txtAge.value.trim();
+            if(isNaN(age)){
+                //alert('Error:\nPlease enter valid data!')
+                ageErr.innerText = 'Error: Please enter valid data!'
+                return false;
+            }
+            else if(age<10){
+                //alert('Error:\nAge should be >= 10')
+                ageErr.innerText = 'Error: Age should be >= 10'
+                return false;
+            }
+            else if(age>90){
+                //alert('Error:\nAge should not be >90')
+                ageErr.innerText = 'Error: Age should be <=90'
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

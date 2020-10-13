@@ -11,25 +11,10 @@ body{
 }
 section{
     margin:40px;    
-    text-align:center;
 }
 article{
     margin-top:40px;
-}
-table{
-    width: 80%;
-    margin:auto;
-    border-collapse:collapse;
     font-size:20px;
-}
-tr{
-    height:45px;
-}
-td,th{
-    border:1px solid black;
-}
-tbody tr:nth-child(odd){
-    background-color:gray
 }
 
 button{
@@ -48,12 +33,6 @@ button:hover{
 p{
     font-size:20px;
 }
-#no_of_records{
-    color:blue;
-    font-weight:bolder;
-    text-decoration: underline;
-}
-input{
-    font-size:18px;
-    padding:5px;
+select{
+    font-size:20px;
 }

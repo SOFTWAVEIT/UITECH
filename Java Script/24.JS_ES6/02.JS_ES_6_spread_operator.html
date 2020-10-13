@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>ES6 | spread</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | ES6 | spread operator</h2>
+    </nav>
+
+    <script>
+        let marks=[10,20,30,25];
+        console.log(Math.max(...marks));        
+    </script>
+    <script>
+        let name = 'Java Script';
+        console.log(name)        
+        console.log(...name)
+        let chars = [...name];
+        console.log(chars)
+    </script>
+    <script>
+        let greet = ['Hello', 'World'];
+        console.log(greet);
+        console.log(...greet);
+    </script>
+</body>
+</html>

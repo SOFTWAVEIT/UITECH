@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #result{
+            font-size:18px;
+            color:blue;
+            width:300px;
+            text-align:center;
+        }
+        button{
+            width:80px;
+            padding:3px;
+            font-size:17px;
+        }
+    </style>
+    <title>Regular Expression</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Regular Expression - 04 | Mobile No</h2>
+    </nav>
+    <section>
+        <article>
+            <p>Data Should be a Valid Indian Mobile Number</p>
+            <hr>
+            Enter Mobile Number
+            <input type="text" id="mobile-field" size=20 autofocus>
+            <button>OK</button>
+            <p id=result></p>
+        </article>
+    </section>
+
+    <script>
+        let button = document.querySelector('button');
+
+        button.addEventListener('click', function(){
+           let result_region = document.querySelector('#result');
+           //get username value from field 
+           let mobile_no = document.querySelector('#mobile-field').value 
+
+           //let pattern = /^[6-9][0-9]{9}$/
+           let pattern = /^[6-9]\d{9}$/ 
+
+           if(pattern.test(mobile_no)){
+               result_region.innerText = 'Valid Indian Mobile No';
+               result_region.style.color = 'green'
+           }
+           else{
+               result_region.innerText = 'Invalid Indian Mobile No';
+               result_region.style.color = 'red'
+           }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Promise</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | Promise | Basics</h2>
+    </nav>
+    <script>
+        let cleanTheRoom = ()=>{return new Promise(function (resolve, reject) {
+            //cleaning the room
+            let isClean = false;
+            if (isClean)
+                resolve('Clean')
+            else
+                reject('Not Clean')
+        })};        
+        
+        
+        let myPromise = cleanTheRoom()
+        console.log(myPromise)
+        myPromise.then(function (fromResolve) {
+            console.log('The room is ' + fromResolve)
+        }).catch(function (fromReject) {
+            console.log('The room is ' + fromReject)
+        })
+    </script>
+</body>
+
+</html>

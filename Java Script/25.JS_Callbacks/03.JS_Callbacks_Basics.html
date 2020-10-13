@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Callbacks</title>
+</head>
+
+<body>
+    <nav id="header">
+        <h2>Java Script | Callbacks</h2>        
+    </nav>
+    <section>
+        <article>
+            <p id="result">??</p>
+        </article>
+    </section>
+    <script>
+        let sum = (x,y)=>{
+            return 'Sum = '+(x+y);
+        }
+
+        let diff = (x,y)=>{
+            return 'Diff = '+(x-y);
+        }
+
+        let prod = (x,y)=>{
+            return 'Product = '+(x*y);
+        }        
+
+        let calculate = function(fno,sno,operation){
+            let res=0;
+            res=operation(fno,sno)  
+            return res;   
+        }
+    </script>        
+    <script>
+        console.log(calculate(10,20,sum));
+        console.log(calculate(10,20,diff));
+        console.log(calculate(10,20,prod));
+        console.log(calculate(10,20,(x,y) => {return x/y}));
+    </script>
+</body>
+
+</html>

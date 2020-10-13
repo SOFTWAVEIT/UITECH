@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>localStorage</title>
+</head>
+<body>
+    <nav>
+        <h2>Java Script / HTML | Web Storage | localStorage</h2>
+    </nav>
+    <section>
+        <article>
+            <button>Show Data</button>
+        </article>
+        <article>
+            <p id="details"></p>
+        </article>
+    </section>
+    <script>
+        //sessionStorage.setItem("name","Sunil Joseph");
+       // sessionStorage.setItem("address","Hyderabad");        
+    </script>
+    <script>
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function(){
+            let noOfData = sessionStorage.length;
+            let name = sessionStorage.getItem("name")
+            let addr = sessionStorage.getItem("address")
+            document.querySelector('#details').innerHTML = `No of sessionStorage Datas = ${noOfData}<br>Name: ${name}<br>Address: ${addr}`
+
+            for(let i=0;i<sessionStorage.length;i++){
+                let key = sessionStorage.key(i)
+                let value = sessionStorage.getItem(key)
+                console.log(key+" = "+value)
+            }
+        })
+    </script>
+</body>
+</html>

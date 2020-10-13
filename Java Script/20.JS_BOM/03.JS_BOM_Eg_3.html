@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BOM-1</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Java Script | Browser Object Model</h2>
+    </nav>
+    <section>
+        <article>
+            <button onclick="showWindow()">Open Window</button>
+        </article>
+    </section>
+    <script>
+        let showWindow = () =>{
+            let wHandle = window.open('','SIT','width=700px,height=500px,top=200px,left=350px,scrollbars=false')
+
+            wHandle.document.write('<h1 style=text-align:center>Welcome to Softwave IT Solutions</h1>')
+
+            wHandle.document.body.style.background='linear-gradient(to right,black,orangered)';
+
+            wHandle.document.body.style.color='white';
+
+            wHandle.document.querySelector('h1').style.color='cyan';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Methods</title>
+</head>
+
+<body>
+    <nav>
+        <h2>Java Script | BANK</h2>
+    </nav>
+    <section>
+        <article>
+            Enter Amount <input type="number" id="amount-field" size=15 autofocus>
+        </article>
+        <article>
+            <button id="withdraw-button">Withdraw</button>
+            <button id="deposit-button">Deposit</button>
+            <button id="balance-button">Balance</button>
+        </article>
+        <article>
+            <p id='result-section'>????</p>
+        </article>
+    </section>
+    <script>
+        class Account{
+            constructor(acno, name, amt){
+                this.acno = acno;
+                this.name = name;
+                this.bal = amt;
+            }
+            getDetails(){
+                return (`A/C No: ${this.acno} | Name: ${this.name} | Balance: ${this.bal}`);
+            }
+            //method to deposit amount in account
+            deposit(amt){
+                this.bal = this.bal + parseInt(amt);
+                return (`Rs.${amt} Credited | Balance: Rs.${this.bal}`)
+            }
+            //method to withdraw amount from account
+            withdraw(amt){
+                if(this.bal >= amt){
+                    this.bal -= Number(amt);
+                    return(`Rs.${amt} Debited | Balance: Rs.${this.bal}`)
+                }
+                else{
+                    return (`ERROR: Insufficient Balance`);
+                }
+            }
+        }
+    </script>
+    <script>
+        let acc = new Account(100001234,'Sunil Joseph', 25000);
+        let result = document.querySelector('#result-section');
+
+        let deposit_button = document.querySelector('#deposit-button');
+        let withdraw_button = document.querySelector('#withdraw-button');
+        let balance_button = document.querySelector('#balance-button');
+        let amount_field = document.querySelector('#amount-field');
+
+        balance_button.addEventListener('click', function(){
+            let msg = acc.getDetails();
+            result.innerText = msg;
+        })
+
+        deposit_button.addEventListener('click', function(){
+            let amount = amount_field.value.trim();
+            let msg = 'Please enter amount';
+
+            if(amount.length>0){
+                msg = acc.deposit(amount);
+            }
+            result.innerText = msg;
+        })
+
+        withdraw_button.addEventListener('click', function(){
+            let amount = amount_field.value.trim();
+            let msg = 'Please enter amount';
+
+            if(amount.length>0){
+                msg = acc.withdraw(amount);
+            }
+            result.innerText = msg;
+        })
+    </script>
+</body>
+
+</html>

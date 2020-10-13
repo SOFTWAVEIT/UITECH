@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table{
+            width:60%;
+            box-shadow:0 0 10px black;
+            font-size:20px;
+            margin:auto;
+            padding:10px;
+            border-radius:15px;
+        }
+        tr{
+            height:40px;
+        }
+        select, input{
+            font-size:20px;
+            padding:5px;
+        }
+        .error{
+            color:red;
+            font-size:15px;
+        }
+    </style>
+    <title>Registration Form</title>
+</head>
+<body>
+    <nav id="header">
+        <h2>Registration Form</h2>
+    </nav>
+    <section>
+        <article>
+            <form action="register.jsp" id="register_form" onsubmit="return validateData()">
+
+                <table>
+                    <tr>
+                        <td width="30%">User Name:</td>
+                        <td><input type="text" name="txtUsername" id="txtUsername">
+                            <span id="spanUsername" class="error"></span>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="txtPassword" id="txtPassword">
+                            <span id="spanPassword" class="error"></span>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td>Confirm Password:</td>
+                        <td><input type="password" name="txtConfirmPassword" id="txtConfirmPassword">
+                            <span id="spanConfirmPassword" class="error"></span>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td>Amount:</td>
+                        <td><input type="text" name="txtAmount" id="txtAmount">
+                            <span id="spanAmount" class="error"> </span>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td>Payment Mode: </td>
+                        <td><select name="txtPaymentMode" id="txtPaymentMode">
+                                <option value="">Select Payment Mode</option>
+                                <option value="DC">Debit Card</option>
+                                <option value="CC">Credit Card</option>
+                                <option value="NB">Net Banking</option>
+                            </select>
+                            <span id="spanPaymentMode" class="error"></span>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td>Email:</td>
+                        <td><input type="text" name="txtEmail" id="txtEmail">
+                            <span id="spanEmail" class="error"></span>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td colspan=2 align=center>
+                            <input type="submit" value="Submit">
+                        </td>
+                    </tr>
+                </table>
+            </form>            
+        </article>
+
+        <article id=errorList></article>
+    </section>
+
+    <script src="register_form.js"></script>
+</body>
+</html>
